@@ -26,7 +26,7 @@ As soon as the procedure finishes to setup the VMs, point your browser to http:/
 
 The default login and password are **admin/admin**
 
-Event when Vagrant finishes to provision the VMs, Ambari is still installing and starting packages on the cluster, the entire procedure may take up to 2 hours to be completed so be patient.
+Event when Vagrant finishes to provision the VMs, Ambari is still installing and starting packages on the cluster, the entire procedure may take up to 2 hours to complete so be patient.
 
 
 
