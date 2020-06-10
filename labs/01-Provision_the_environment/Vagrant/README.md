@@ -24,11 +24,8 @@ As soon as the procedure finishes to setup the cluster, point your browser to ht
 
 The default login and password are **admin/admin**
 
-```console
-$ curl -vvv -H "X-Requested-By: ambari" -X POST -u admin:admin http://node1.example.com:8080/api/v1/blueprints/multinode-hdp -d @blueprint.json
-```
+Event when Vagrant finishes to provision the VMs, Ambari is still installing and starting packages on the cluster, the entire procedure may take up to 2 hours to be completed.
 
-```console
-$ curl -vvv -H "X-Requested-By: ambari" -X POST -u admin:admin http://node1.example.com:8080/api/v1/clusters/multinode-hdp -d @clustertemplate.json
-```
+
+
 
