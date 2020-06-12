@@ -4,7 +4,7 @@
 
 [00 - Prerequisites](labs/00-Prerequisites/README.md)
 
-[00 - Provision the environment](labs/01-Provision_the_environment/README.md)
+[01 - Provision the environment](labs/01-Provision_the_environment/README.md)
 
 ## Appendices
 
