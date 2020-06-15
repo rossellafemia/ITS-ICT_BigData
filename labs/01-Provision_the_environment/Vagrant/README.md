@@ -2,6 +2,10 @@
 
 Every command listed below is supposed to be run from within the folder where this README.md file resides.
 
+The following virtual infrastructure will be provisioned using Vagrant
+
+![Vagrant Virtualbox lab environment](img/3-nodes/infra.png)
+
 Install the Vagrant's hostmanager plugin 
 
 ```console
@@ -28,6 +32,8 @@ The default login and password are **admin/admin**
 
 Even when Vagrant finishes to provision the VMs, Ambari is still installing and starting packages on the cluster, the entire procedure may take up to 1 hour to complete, so be patient.
 
+At the end of the provisioning process, the following architecture will be available.
 
+![Software distribution](img/3-nodes/services_distribution.png)
 
 
