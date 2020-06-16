@@ -226,4 +226,29 @@ By inspecting a line (refferred to block 0) we can see that
 0. BP-2031746174-192.168.199.2-1591961399762:blk_1073741995_1178 len=1048576 Live_repl=3  [DatanodeInfoWithStorage[192.168.199.4:50010,DS-6cacbc28-5ee9-45d5-a098-6084f9f771d4,DISK], DatanodeInfoWithStorage[192.168.199.3:50010,DS-f86177ce-37e8-4afc-b957-36047c6990bc,DISK], DatanodeInfoWithStorage[192.168.199.2:50010,DS-0ef6196f-ba80-46cf-b9be-5a05e07dd7ca,DISK]]
 ```
 
-blk_1073741995_1178 = the block id
+- blk_1073741995_1178 = the block id
+- len=1048576 is 1Mb circa
+- Live_repl=3 is replicated three times
+- [DatanodeInfoWithStorage[192.168.199.4:50010,DS-6cacbc28-5ee9-45d5-a098-6084f9f771d4,DISK], DatanodeInfoWithStorage[192.168.199.3:50010,DS-f86177ce-37e8-4afc-b957-36047c6990bc,DISK], DatanodeInfoWithStorage[192.168.199.2:50010,DS-0ef6196f-ba80-46cf-b9be-5a05e07dd7ca,DISK]] are the Datanodes holding the block replicas
+
+By finding the blockid on the node1 we can see how Hadoop stores the block
+
+```console
+[vagrant@node1 ~]$ sudo find / -name "blk_1073741995*"
+/hadoop/hdfs/data/current/BP-2031746174-192.168.199.2-1591961399762/current/finalized/subdir0/subdir0/blk_1073741995_1178.meta
+/hadoop/hdfs/data/current/BP-2031746174-192.168.199.2-1591961399762/current/finalized/subdir0/subdir0/blk_1073741995
+```
+
+The two output lines show that a single block has a metadata file and a file containing the actual block of data.
+
+If you inspect the latter, you can see that the data has been cut around the block dimension (1Mb)
+
+
+```console
+[vagrant@node1 ~]$ sudo cat /hadoop/hdfs/data/current/BP-2031746174-192.168.199.2-1591961399762/current/finalized/subdir0/subdir0/blk_1073741995
+...
+9851,ERIC SHAFFER,REGISTERED NURSE,92149.82,1069.72,4858.68,,98078.22,98078.22,2011,,San Francisco,
+9852,LEO BERNSTEIN,POLICE OFFICER I,84009.21,3027.23,11030.81,,98067.25,98067.25,2011,,San Francisco,
+9853,TAMI QUAN,AIRPORT ELECTRICIAN,96050.44,90.77,1920.0,,98061.21,98061.21,2011,,San Francisco,
+9854,JOANNE D[vagrant@node1 ~]$ 
+```
