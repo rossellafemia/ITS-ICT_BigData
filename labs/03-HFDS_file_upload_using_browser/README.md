@@ -45,3 +45,7 @@ If you click on the **Utilities** menu, you can browse the file system as well
 ![Files view](img/3-nodes/8.png)
 
 Here you can upload files as with the Ambari web application.
+
+![Files view](img/3-nodes/9.png)
+
+![Files view](img/3-nodes/10.png)
