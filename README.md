@@ -8,6 +8,8 @@
 
 [02 - HFDS file upload using CLI](labs/02-HFDS_file_upload_using_CLI/README.md)
 
+[03 - HFDS file upload using browser](labs/02-HFDS_file_upload_using_browser/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)

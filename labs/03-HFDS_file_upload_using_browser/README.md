@@ -1,4 +1,4 @@
-# HFDS file upload using Ambari
+# HFDS file upload using browser
 
 This lab references hosts, users, paths and other details that belong to the [Vagrant-provisioned 3 nodes Hadoop cluster](../01-Provision_the_environment/Vagrant/README.md).
 
@@ -43,3 +43,5 @@ If you want to see some HDFS statistics, you can click [here](http://192.168.199
 If you click on the **Utilities** menu, you can browse the file system as well
 
 ![Files view](img/3-nodes/8.png)
+
+Here you can upload files as with the Ambari web application.
