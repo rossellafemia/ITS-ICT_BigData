@@ -49,3 +49,11 @@ Here you can upload files as with the Ambari web application.
 ![Files view](img/3-nodes/9.png)
 
 ![Files view](img/3-nodes/10.png)
+
+If you click on **hdfs-dir** and then on **salaries.csv** 
+
+![Files view](img/3-nodes/11.png)
+
+you get informations about the file and how it has been divided into blocks. For each block, you can see on which node the block has been replicated 
+
+![Files view](img/3-nodes/12.png)
