@@ -8,7 +8,7 @@
 
 [02 - HFDS file upload using CLI](labs/02-HFDS_file_upload_using_CLI/README.md)
 
-[03 - HFDS file upload using browser](labs/02-HFDS_file_upload_using_browser/README.md)
+[03 - HFDS file upload using browser](labs/03-HFDS_file_upload_using_browser/README.md)
 
 ## Appendices
 
