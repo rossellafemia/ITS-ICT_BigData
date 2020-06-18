@@ -48,9 +48,9 @@ Here you can upload files as with the Ambari web application.
 
 ![Files view](img/3-nodes/9.png)
 
-![Files view](img/3-nodes/10.png)
-
 If you click on **hdfs-dir** and then on **salaries.csv** 
+
+![Files view](img/3-nodes/10.png)
 
 ![Files view](img/3-nodes/11.png)
 
