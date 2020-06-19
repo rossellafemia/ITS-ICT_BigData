@@ -73,6 +73,6 @@ If you go into the **/user/user1** folder, you can see the same file you uploade
 
 ![Files view](img/3-nodes/9.png)
 
-If you click on **salaries.csv** you get informations about the file and how it has been divided into blocks (1 block only in this case since the file's dimensions are only 16Mb). For each block, you can see on which node the block has been replicated 
+If you click on **salaries.csv** you get informations about the file and how it has been divided into blocks (1 block only in this case since the file's dimensions are only 16Mb). For each block, you can see on which node the block has been replicated .
 
 ![Files view](img/3-nodes/10.png)
