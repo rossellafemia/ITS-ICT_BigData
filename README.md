@@ -4,11 +4,13 @@
 
 [00 - Prerequisites](labs/00-Prerequisites/README.md)
 
-[01 - Provision the environment](labs/01-Provision_the_environment/README.md)
+[01 - Fork and clone this repo](labs/01-Fork_and_clone_this_repo/README.md)
 
-[02 - HFDS file upload using CLI](labs/02-HFDS_file_upload_using_CLI/README.md)
+[02 - Provision the environment](labs/02-Provision_the_environment/README.md)
 
-[03 - HFDS file upload using browser](labs/03-HFDS_file_upload_using_browser/README.md)
+[03 - HFDS file upload using CLI](labs/03-HFDS_file_upload_using_CLI/README.md)
+
+[04 - HFDS file upload using browser](labs/04-HFDS_file_upload_using_browser/README.md)
 
 ## Appendices
 

@@ -14,7 +14,7 @@ It is possible to run this lab in any other environment (i.e.: Hortonworks Sandb
 
 ## Upload a file to HDFS
 
-Go to path **ITS-ICT_BigData/labs/01-Provision_the_environment/Vagrant** and connect to node 1.
+Go to path **ITS-ICT_BigData/labs/02-Provision_the_environment/Vagrant** and connect to node 1.
 
 ```console
 $ vagrant ssh node1 
