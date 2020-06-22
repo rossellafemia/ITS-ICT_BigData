@@ -8,7 +8,7 @@
 
 Open your browser and go to: https://github.com/sunnyvale-academy/ITS-ICT_BigData
 
-The ITS-ICT_BigData repo home page opens:
+The ITS-ICT_BigData repo home page opens.
 
 ![GitHub](img/github_home_not_logged_in.png)
 
