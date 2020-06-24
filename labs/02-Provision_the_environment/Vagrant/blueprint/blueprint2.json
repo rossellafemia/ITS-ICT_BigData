@@ -617,7 +617,7 @@
                     "yarn.scheduler.capacity.ordering-policy.priority-utilization.underutilized-preemption.enabled": "true",
                     "yarn.scheduler.maximum-allocation-mb": "510",
                     "yarn.scheduler.maximum-allocation-vcores": "1",
-                    "yarn.scheduler.minimum-allocation-mb": "170",
+                    "yarn.scheduler.minimum-allocation-mb": "256",
                     "yarn.scheduler.minimum-allocation-vcores": "1",
                     "yarn.service.framework.path": "/hdp/apps/${hdp.version}/yarn/service-dep.tar.gz",
                     "yarn.service.system-service.dir": "/services",
