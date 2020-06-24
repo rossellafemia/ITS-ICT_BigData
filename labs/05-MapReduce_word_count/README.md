@@ -195,11 +195,47 @@ Once done, you may try to re-run the word count example:
                 Bytes Written=17031
 ```
 
-As you can see the wordcount MapReduce example run successfully, it's time to inspect the output:
+As you can see, the wordcount MapReduce example run successfully, it's time to inspect the generated  output:
 
 ```
 [vagrant@node1 ~]$ hadoop fs -ls /user/vagrant/wordcount_output
 Found 2 items
 -rw-r--r--   3 vagrant hdfs          0 2020-06-24 12:51 /user/vagrant/wordcount_output/_SUCCESS
 -rw-r--r--   3 vagrant hdfs      17031 2020-06-24 12:51 /user/vagrant/wordcount_output/part-r-00000
+```
+
+The output file, contains words and their occurrences: 
+
+```
+[vagrant@node1 ~]$ hadoop fs -cat /user/vagrant/wordcount_output/part-r-00000
+...
+when    11
+whenever        4
+where   2
+wherein 3
+whereof 3
+which   42
+which,  1
+who     15
+who,    1
+whole   10
+whom    4
+whom,   1
+whose   1
+will    3
+with    17
+within  19
+within, 1
+without 13
+witness 1
+witnesses       2
+work    1
+would   2
+writing,        1
+writs   1
+written 6
+year    1
+year,   1
+years   9
+years;  1
 ```
