@@ -12,6 +12,8 @@
 
 [04 - HFDS file upload using browser](labs/04-HFDS_file_upload_using_browser/README.md)
 
+[05 - MapReduce word count](labs/05-MapReduce_word_count/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
