@@ -6,9 +6,9 @@ This lab references hosts, users, paths and other details that belong to the [Va
 
 The [Vagrant-provisioned 3 nodes Hadoop cluster](../02-Provision_the_environment/Vagrant/README.md) should have been started before executing this lab.
 
-Also, all the cluster services must be started as show in the picture below:
+Also, all the cluster services must be started as show in the picture below: 
 
-![Cluster services](img/3-nodes/cluster_services.png)
+![Cluster services](./img/3-nodes/cluster_services.png)
 
 It is possible to run this lab in any other environment (i.e.: Hortonworks Sandbox or Cloudera DataFlow) provided some small changes to the elements listed above.
 
