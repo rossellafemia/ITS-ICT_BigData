@@ -14,6 +14,8 @@
 
 [05 - MapReduce word count](labs/05-MapReduce_word_count/README.md)
 
+[06 - Code MapReduce job](labs/06-Code_MapReduce_job/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
