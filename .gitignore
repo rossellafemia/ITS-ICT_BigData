@@ -2,3 +2,5 @@
 **/*.log
 **/*.logs
 **/.DS_Store
+**/.idea
+**/target
