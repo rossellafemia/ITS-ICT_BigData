@@ -168,19 +168,31 @@ Log into the **node1** machine
 $ vagrant ssh node1
 ```
 
-hadoop fs -mkdir lab6_input
+Create the input folder on HDFS:
 
-hadoop fs -put /home/vagrant/ITS-ICT_BigData/labs/06-Code_MapReduce_job/input/sample.txt lab6_input
+```console
+$ hadoop fs -mkdir lab6_input
+```
 
+Load the dataset file into the HDFS input folder:
 
+```console
+$ hadoop fs -put /home/vagrant/ITS-ICT_BigData/labs/06-Code_MapReduce_job/input/sample.txt lab6_input
+```
 
+Verify that the file has been loaded to HDFS
+
+```console
+$ 
 [vagrant@node1 ~]$ hadoop fs -ls lab6_input
 Found 1 items
 -rw-r--r--   3 vagrant hdfs        218 2020-07-13 10:32 lab6_input/sample.txt
+```
 
+Submit the MapReduce job using YARN
 
-
-yarn jar /home/vagrant/ITS-ICT_BigData/labs/06-Code_MapReduce_job/target/code-mapreduce-1.0-SNAPSHOT.jar it.sunnyvale.hadoop.labs.CodeMapReduce lab6_input lab6_output 
+```console
+$ yarn jar /home/vagrant/ITS-ICT_BigData/labs/06-Code_MapReduce_job/target/code-mapreduce-1.0-SNAPSHOT.jar it.sunnyvale.hadoop.labs.CodeMapReduce lab6_input lab6_output 
 20/07/13 10:36:08 INFO client.RMProxy: Connecting to ResourceManager at node1.example.com/192.168.199.2:8050
 20/07/13 10:36:08 INFO client.AHSProxy: Connecting to Application History server at node2.example.com/192.168.199.3:10200
 20/07/13 10:36:08 INFO client.RMProxy: Connecting to ResourceManager at node1.example.com/192.168.199.2:8050
@@ -261,15 +273,23 @@ yarn jar /home/vagrant/ITS-ICT_BigData/labs/06-Code_MapReduce_job/target/code-ma
                 Bytes Read=327
         File Output Format Counters 
                 Bytes Written=24
+```
 
+Verify the output
 
-[vagrant@node1 ~]$ hadoop fs -ls lab6_output
+```console
+$ hadoop fs -ls lab6_output
 Found 2 items
 -rw-r--r--   3 vagrant hdfs          0 2020-07-13 10:37 lab6_output/_SUCCESS
 -rw-r--r--   3 vagrant hdfs         24 2020-07-13 10:37 lab6_output/part-00000
+```
 
+Display the output file:
 
+```
 hadoop fs -cat lab6_output/part-00000
 1981    34
 1984    40
 1985    45
+```
+
