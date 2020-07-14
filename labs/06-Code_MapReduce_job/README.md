@@ -286,7 +286,7 @@ Found 2 items
 
 Display the output file:
 
-```
+```console
 [vagrant@node1 ~]$ hadoop fs -cat lab6_output/part-00000
 1981    34
 1984    40
