@@ -1578,6 +1578,7 @@
         }
     ],
     "Blueprints": {
+        "blueprint_name": "mycluster",
         "stack_name": "HDP",
         "stack_version": "3.1"
     }
