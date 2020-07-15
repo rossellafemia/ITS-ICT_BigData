@@ -1,1 +1,1 @@
-curl -ivvvv -u admin:admin -d /vagrant/blueprint/vagrant_user.json -H "X-Requested-By: ambari" -X POST http://localhost:8080/api/v1/users
+curl -iv -u admin:admin -H "X-Requested-By: ambari" -X POST -d '{"Users/user_name":"vagrant","Users/password":"vagrant","Users/active":"true","Users/admin":"false"}' http://localhost:8080/api/v1/users
