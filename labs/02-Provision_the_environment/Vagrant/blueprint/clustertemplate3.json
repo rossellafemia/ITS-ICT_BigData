@@ -1,11 +1,11 @@
 {
     "blueprint": "mycluster",
     "config_recommendation_strategy": "NEVER_APPLY",
-    "provision_action": "INSTALL",
+    "provision_action": "INSTALL_ONLY",
     "configurations": [],
     "host_groups": [
         {
-            "name": "host_group_0",
+            "name": "host_group_1",
             "hosts": [
                 {
                     "fqdn": "node1.example.com"
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "name": "host_group_1",
+            "name": "host_group_2",
             "hosts": [
                 {
                     "fqdn": "node2.example.com"
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "name": "host_group_2",
+            "name": "host_group_3",
             "hosts": [
                 {
                     "fqdn": "node3.example.com"
