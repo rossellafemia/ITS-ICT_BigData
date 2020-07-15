@@ -11,6 +11,7 @@ Vagrant.configure(2) do |config|
       node1.vm.provision "shell", path: "scripts/install_ambari_server.sh"
       node1.vm.provision "shell", path: "scripts/link_repo_to_vagrant_user.sh"
       node1.vm.provision "shell", path: "scripts/install_pig_0.17.sh"
+      node1.vm.provision "shell", path: "scripts/add_vagrant_user_to_ambari.sh"
       node1.vm.network "forwarded_port", guest: 8080, host: 8080
       node1.vm.provider "virtualbox" do |v|
         v.memory = 5120
