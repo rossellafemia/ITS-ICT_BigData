@@ -18,7 +18,9 @@ Install the Vagrant's vbguest plugin
 $ vagrant plugin install vagrant-vbguest
 ```
 
-Provision the cluster 
+Before starting the provisioning, go to **scripts** folder and open the file **create_cluster.sh**. Here, decomment the cluster topology you wan to install.
+
+When ready, provision the cluster:
 
 ```console
 $ vagrant up

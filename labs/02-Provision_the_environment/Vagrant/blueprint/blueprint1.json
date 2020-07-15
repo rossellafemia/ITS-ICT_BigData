@@ -482,7 +482,7 @@
                     "hfile.block.cache.size": "0.4",
                     "zookeeper.recovery.retry": "6",
                     "zookeeper.session.timeout": "90000",
-                    "zookeeper.znode.parent": "/hbase-unsecure"
+                    "zookeeper.znode.parent": "/atsv2-hbase-unsecure"
                 }
             }
         },
@@ -508,7 +508,7 @@
                     "hadoop.registry.dns.enabled": "true",
                     "hadoop.registry.dns.zone-mask": "255.255.255.0",
                     "hadoop.registry.dns.zone-subnet": "172.17.0.0",
-                    "hadoop.registry.zk.quorum": "node2.example.com:2181,node3.example.com:2181,node1.example.com:2181",
+                    "hadoop.registry.zk.quorum": "node1.example.com:2181,node3.example.com:2181,node2.example.com:2181",
                     "manage.include.files": "false",
                     "yarn.acl.enable": "false",
                     "yarn.admin.acl": "activity_analyzer,yarn",
@@ -518,8 +518,8 @@
                     "yarn.http.policy": "HTTP_ONLY",
                     "yarn.log-aggregation-enable": "true",
                     "yarn.log-aggregation.retain-seconds": "2592000",
-                    "yarn.log.server.url": "http://node1.example.com:19888/jobhistory/logs",
-                    "yarn.log.server.web-service.url": "http://node1.example.com:8188/ws/v1/applicationhistory",
+                    "yarn.log.server.url": "http://node2.example.com:19888/jobhistory/logs",
+                    "yarn.log.server.web-service.url": "http://node2.example.com:8188/ws/v1/applicationhistory",
                     "yarn.node-labels.enabled": "false",
                     "yarn.node-labels.fs-store.retry-policy-spec": "2000, 500",
                     "yarn.node-labels.fs-store.root-dir": "/system/yarn/node-labels",
@@ -608,7 +608,7 @@
                     "yarn.resourcemanager.work-preserving-recovery.enabled": "true",
                     "yarn.resourcemanager.work-preserving-recovery.scheduling-wait-ms": "10000",
                     "yarn.resourcemanager.zk-acl": "world:anyone:rwcda",
-                    "yarn.resourcemanager.zk-address": "node2.example.com:2181,node3.example.com:2181,node1.example.com:2181",
+                    "yarn.resourcemanager.zk-address": "node1.example.com:2181,node3.example.com:2181,node2.example.com:2181",
                     "yarn.resourcemanager.zk-num-retries": "1000",
                     "yarn.resourcemanager.zk-retry-interval-ms": "1000",
                     "yarn.resourcemanager.zk-state-store.parent-path": "/rmstore",
@@ -617,12 +617,12 @@
                     "yarn.scheduler.capacity.ordering-policy.priority-utilization.underutilized-preemption.enabled": "true",
                     "yarn.scheduler.maximum-allocation-mb": "510",
                     "yarn.scheduler.maximum-allocation-vcores": "1",
-                    "yarn.scheduler.minimum-allocation-mb": "170",
+                    "yarn.scheduler.minimum-allocation-mb": "256",
                     "yarn.scheduler.minimum-allocation-vcores": "1",
                     "yarn.service.framework.path": "/hdp/apps/${hdp.version}/yarn/service-dep.tar.gz",
                     "yarn.service.system-service.dir": "/services",
                     "yarn.system-metricspublisher.enabled": "true",
-                    "yarn.timeline-service.address": "node1.example.com:10200",
+                    "yarn.timeline-service.address": "node2.example.com:10200",
                     "yarn.timeline-service.bind-host": "0.0.0.0",
                     "yarn.timeline-service.client.max-retries": "30",
                     "yarn.timeline-service.client.retry-interval-ms": "1000",
@@ -658,8 +658,8 @@
                     "yarn.timeline-service.ttl-ms": "2678400000",
                     "yarn.timeline-service.version": "2.0f",
                     "yarn.timeline-service.versions": "1.5f,2.0f",
-                    "yarn.timeline-service.webapp.address": "node1.example.com:8188",
-                    "yarn.timeline-service.webapp.https.address": "node1.example.com:8190",
+                    "yarn.timeline-service.webapp.address": "node2.example.com:8188",
+                    "yarn.timeline-service.webapp.https.address": "node2.example.com:8190",
                     "yarn.webapp.api-service.enable": "true",
                     "yarn.webapp.ui2.enable": "true"
                 }
@@ -699,7 +699,7 @@
                     "mapreduce.job.emit-timeline-data": "true",
                     "mapreduce.job.queuename": "default",
                     "mapreduce.job.reduce.slowstart.completedmaps": "0.05",
-                    "mapreduce.jobhistory.address": "node1.example.com:10020",
+                    "mapreduce.jobhistory.address": "node2.example.com:10020",
                     "mapreduce.jobhistory.admin.acl": "*",
                     "mapreduce.jobhistory.bind-host": "0.0.0.0",
                     "mapreduce.jobhistory.done-dir": "/mr-history/done",
@@ -708,7 +708,7 @@
                     "mapreduce.jobhistory.recovery.enable": "true",
                     "mapreduce.jobhistory.recovery.store.class": "org.apache.hadoop.mapreduce.v2.hs.HistoryServerLeveldbStateStoreService",
                     "mapreduce.jobhistory.recovery.store.leveldb.path": "/hadoop/mapreduce/jhs",
-                    "mapreduce.jobhistory.webapp.address": "node1.example.com:19888",
+                    "mapreduce.jobhistory.webapp.address": "node2.example.com:19888",
                     "mapreduce.map.java.opts": "-Xmx136m",
                     "mapreduce.map.log.level": "INFO",
                     "mapreduce.map.memory.mb": "170",
@@ -1240,22 +1240,16 @@
                     "name": "NAMENODE"
                 },
                 {
-                    "name": "APP_TIMELINE_SERVER"
+                    "name": "RESOURCEMANAGER"
                 },
                 {
-                    "name": "RESOURCEMANAGER"
+                    "name": "TIMELINE_READER"
                 },
                 {
                     "name": "YARN_REGISTRY_DNS"
                 },
                 {
-                    "name": "HISTORYSERVER"
-                },
-                {
                     "name": "ZOOKEEPER_SERVER"
-                },
-                {
-                    "name": "METRICS_COLLECTOR"
                 },
                 {
                     "name": "METRICS_GRAFANA"
@@ -1297,6 +1291,12 @@
                     "name": "SECONDARY_NAMENODE"
                 },
                 {
+                    "name": "APP_TIMELINE_SERVER"
+                },
+                {
+                    "name": "HISTORYSERVER"
+                },
+                {
                     "name": "ZOOKEEPER_SERVER"
                 },
                 {
@@ -1327,6 +1327,9 @@
                     "name": "ZOOKEEPER_SERVER"
                 },
                 {
+                    "name": "METRICS_COLLECTOR"
+                },
+                {
                     "name": "DATANODE"
                 },
                 {
@@ -1343,9 +1346,6 @@
                 },
                 {
                     "name": "ZOOKEEPER_CLIENT"
-                },
-                {
-                    "name": "TIMELINE_READER"
                 }
             ],
             "cardinality": "1"
