@@ -4,4 +4,4 @@ Given the dataset [sunnyvale_pv_energy_production.csv](../../datasets/sunnyvale_
 
 In the dataset, colum 1 contains the day of production (dd/mm/yy) and the column 2 contains the energy produced in that day (Watt-hour, Wh).
 
-As a reference, follow the lab [06 - Code MapReduce job](../labs/06-Code_MapReduce_job/README.md).
+As a reference, follow the lab [06 - Code MapReduce job](../../labs/06-Code_MapReduce_job/README.md).
