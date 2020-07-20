@@ -20,6 +20,12 @@ To solve these problems, we have the MapReduce framework.
 
 ## Test locally
 
+Clean and compile the application
+
+```console
+$ mvn clean && mvn compile
+...
+```
 Run a local test
 
 ```console

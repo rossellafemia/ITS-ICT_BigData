@@ -16,6 +16,8 @@
 
 [06 - Code MapReduce job](labs/06-Code_MapReduce_job/README.md)
 
+[07 - Hadoop Streaming](labs/07-Hadoop_Streaming/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
