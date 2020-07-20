@@ -6,8 +6,8 @@ from operator import itemgetter
 maxpower = 0
 maxdate = ""
 
-for record in sys.stdin:
-    record = record.strip() 
+for line in sys.stdin:
+    record = line.strip() 
     fields = record.split("\t")
     date = fields[0] 
     power = fields[1] 
