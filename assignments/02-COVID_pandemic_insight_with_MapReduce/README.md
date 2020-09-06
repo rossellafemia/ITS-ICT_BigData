@@ -1,6 +1,6 @@
 # COVID pandemic insight with MapReduce
 
-Given the dataset [dpc-covid19-ita-regioni.csv](../../datasets/dpc-covid19-ita-regioni.csv), containing data about the new Coronavirus infections in Italy split by regions from February 2020, code your MapReduce job to find out the number of new infections for each day ( **select sum(nuovi_positivi) group by data**). 
+Given the file [dpc-covid19-ita-regioni.csv](../../datasets/dpc-covid19-ita-regioni.csv), containing data about the new Coronavirus infections in Italy split by regions from February 2020, code your MapReduce job to find out the sum of new infections per day ( **select sum(nuovi_positivi) group by data**). 
 
 Take this simple output as a reference:
 
