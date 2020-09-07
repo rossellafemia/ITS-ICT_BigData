@@ -22,6 +22,8 @@
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
 
+[02 - COVID pandemic insight with MapReduce](assignments/02-COVID_pandemic_insight_with_MapReduce/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
