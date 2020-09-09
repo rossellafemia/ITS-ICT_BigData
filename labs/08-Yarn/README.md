@@ -14,6 +14,17 @@ It is possible to run this lab in any other environment (i.e.: Hortonworks Sandb
 
 Lab [03 - HFDS_file_upload_using_CLI](../03-03-HFDS_file_upload_using_CLI/README.md) must be completed BEFORE this one.
 
+If you are using the Vagrant-based lab environment, you have to append the following three lines into **/etc/hosts** (*nix) into **C:/Windows/System32/driver/etc/hosts** (Windows).
+
+```
+192.168.199.2 node1.example.com
+192.168.199.3 node2.example.com
+192.168.199.4 node3.example.com
+```
+
+If you are using any other lab environment (Cloudera, Hortonworks VM/s), just make sure that your host resolves the VM/s by name.
+
+
 # Run the lab
 
 This lab is using the following Hadoop example application:
@@ -139,3 +150,57 @@ Found 2 items
 count   7620
 length  37054
 ```
+
+Have a look of the following line
+```
+20/09/07 10:49:05 INFO client.RMProxy: Connecting to ResourceManager at node1.example.com/192.168.199.2:8050
+```
+
+The yarn client is contacting the  ResourceManager so submit the yob (node1.example.com/192.168.199.2:8050)
+
+After the application has been submitted, you get a URL to track the job
+
+```
+20/09/07 10:49:08 INFO mapreduce.Job: The url to track the job: http://node1.example.com:8088/proxy/application_1599467673877_0006/
+```
+
+If you put the link that Hadoop showed in your environment in a browser, you will see:
+
+![](img/1.png)
+
+You can see here only one attempt to run the job, the Application Master has been run on node 3 and you can also inspect the logs.
+
+In the table below you can see that only 1 map task and 1 reduce task have been executed and completed successfully.
+
+Move around following the links on the page to discover more information about your run.
+
+If you point your brower to http://node1.example.com:8088/cluster (Vagrant-based environment only) you will see:
+
+![](img/2.png)
+
+This page shows some overall cluster informations. In the table you can find all the job submissions with the user, the application type, the state and the final state for each one.
+
+In the Cluster Metrics table note the VCores total and Memory total.
+
+In the Scheduler Metrics table you can see the minimum and the maximum resources that can be allocated per container.
+
+Clicking on Scheduler on the left you get some informations about the Scheduler process.
+
+![](img/3.png)
+
+In the center of the sceen you can see some statistics of the default queue (expand the **Queue: default** accordion)
+
+![](img/4.png)
+
+A queue is a resource bucket you can get resources from. The default queue has all the cluster cupacity but you can create other queues and even subqueues.
+
+More about the Capacity Scheduler [here](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/CapacityScheduler.html)
+
+Yarn can be fully managed and monitored using Ambari
+
+![](./img/5.png)
+
+If you want to submit jobs from a client external to the cluster (until now we only submitted jobs from node1), you can download the **client configurations**
+
+![](./img/6.png)
+
