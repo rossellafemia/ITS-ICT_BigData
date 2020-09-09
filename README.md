@@ -20,11 +20,15 @@
 
 [08 - Yarn](labs/08-Yarn/README.md)
 
+[09 - Pig](labs/09-Pig/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
 
 [02 - COVID pandemic insight with MapReduce](assignments/02-COVID_pandemic_insight_with_MapReduce/README.md)
+
+[03 - COVID pandemic insight with Pig](assignments/03-COVID_pandemic_insight_with_Pig/README.md)
 
 ## Appendices
 
