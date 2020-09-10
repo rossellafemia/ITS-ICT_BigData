@@ -28,6 +28,8 @@
 
 [02 - COVID pandemic insight with MapReduce](assignments/02-COVID_pandemic_insight_with_MapReduce/README.md)
 
+[03 - PV energy production insights with Pig](assignments/03-PV_energy_production_insights_with_Pig/README.md)
+
 [04 - COVID pandemic insight with Pig](assignments/04-COVID_pandemic_insight_with_Pig/README.md)
 
 ## Appendices
