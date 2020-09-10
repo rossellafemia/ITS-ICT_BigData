@@ -32,7 +32,7 @@ Create the HDFS input folder
 
 ```console
 $ vagrant ssh node1 
-[vagrant@node1 ~]$ hadoop fs -mkdir lab9_input
+[vagrant@node1 09-Pig]$ hadoop fs -mkdir lab9_input
 ```
 
 
@@ -40,7 +40,7 @@ Copy the dataset in the right HDFS folder
 
 ```console
 $ vagrant ssh node1 
-[vagrant@node1 ~]$ hadoop fs -put input/students.csv lab9_input
+[vagrant@node1 09-Pig]$ hadoop fs -put input/students.csv lab9_input
 ```
 
 ## Case A: search for the maximun GPA
