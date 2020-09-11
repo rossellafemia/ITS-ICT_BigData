@@ -24,14 +24,12 @@ Move to this folder within the VM
 
 
 ```console
-$ vagrant ssh node1 
 [vagrant@node1 ~]$ cd ITS-ICT_BigData/labs/09-Pig/
 ```
 
 Create the HDFS input folder
 
 ```console
-$ vagrant ssh node1 
 [vagrant@node1 09-Pig]$ hadoop fs -mkdir lab9_input
 ```
 
@@ -39,7 +37,6 @@ $ vagrant ssh node1
 Copy the dataset in the right HDFS folder
 
 ```console
-$ vagrant ssh node1 
 [vagrant@node1 09-Pig]$ hadoop fs -put input/students.csv lab9_input
 ```
 
@@ -51,20 +48,6 @@ In this scenario, we will use a pig script to search the student with the maximu
 Run the script 
 
 ```console
-[vagrant@node1 09-Pig]$ pig script.pig
-20/09/10 23:13:04 INFO pig.ExecTypeProvider: Trying ExecType : LOCAL
-20/09/10 23:13:04 INFO pig.ExecTypeProvider: Trying ExecType : MAPREDUCE
-20/09/10 23:13:04 INFO pig.ExecTypeProvider: Picked MAPREDUCE as the ExecType
-2020-09-10 23:13:04,829 [main] INFO  org.apache.pig.Main - Apache Pig version 0.17.0 (r1797386) compiled Jun 02 2017, 15:41:58
-2020-09-10 23:13:04,829 [main] INFO  org.apache.pig.Main - Logging error messages to: /usr/src/git_repo/labs/09-Pig/pig_1599779584827.log
-2020-09-10 23:13:05,220 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /home/vagrant/.pigbootup not found
-2020-09-10 23:13:05,287 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: hdfs://node1.example.com:8020
-2020-09-10 23:13:05,740 [main] INFO  org.apache.pig.PigServer - Pig Script ID for the session: PIG-script.pig-96a5440a-7a6a-40dd-b0b3-001bb641375c
-2020-09-10 23:13:05,984 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: node2.example.com:8188
-2020-09-10 23:13:06,504 [main] INFO  org.apache.pig.backend.hadoop.PigATSClient - Created ATS Hook
-2020-09-10 23:13:08,184 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 1003: Unable to find an operator for alias result
-Details at logfile: /usr/src/git_repo/labs/09-Pig/pig_1599779584827.log
-2020-09-10 23:13:08,354 [main] INFO  org.apache.pig.Main - Pig script completed in 3 seconds and 489 milliseconds (3489 ms)
 [vagrant@node1 09-Pig]$ pig script.pig 
 20/09/10 23:13:27 INFO pig.ExecTypeProvider: Trying ExecType : LOCAL
 20/09/10 23:13:27 INFO pig.ExecTypeProvider: Trying ExecType : MAPREDUCE
