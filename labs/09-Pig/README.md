@@ -44,8 +44,20 @@ Copy the dataset in the right HDFS folder
 
 In this scenario, we will use a pig script to search the student with the maximun GPA (Grade Point Average)
 
+### Run the script on local machine
 
-Run the script 
+To run Pig on your local machine please ensure to have:
+
+ - A JDK version 1.8 installed
+ - Your JAVA_HOME should be set to your JDK 1.8 home directory
+ - JAVA_HOME/bin into the PATH
+ - Maven installed and reachable from you PATH
+
+```console
+$ mvn exec:java -Dexec.args="-x local script.pig" 
+```
+
+### Run the script within VM
 
 ```console
 [vagrant@node1 09-Pig]$ pig script.pig 
