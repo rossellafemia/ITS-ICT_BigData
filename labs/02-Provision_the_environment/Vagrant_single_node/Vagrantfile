@@ -1,0 +1,27 @@
+Vagrant.configure(2) do |config|
+    config.ssh.insert_key = false 
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_guest = true
+    config.hostmanager.manage_host = false
+    config.vm.define "node1" do |node1|
+      node1.vm.box = "centos/7" 
+      node1.vm.synced_folder "../../..", "/usr/src/git_repo"
+      node1.vm.network "private_network", ip: "192.168.199.10"
+      node1.vm.hostname = "hdp-singlenode.example.com"
+      node1.vm.provision "shell", path: "scripts/install_utilities.sh"
+      node1.vm.provision "shell", path: "scripts/install_ambari_server.sh"
+      node1.vm.provision "shell", path: "scripts/install_ambari_agent.sh"
+      node1.vm.provision "shell", path: "scripts/link_repo_to_vagrant_user.sh"
+      node1.vm.provision "shell", path: "scripts/install_pig_0.17.sh"
+      node1.vm.provision "shell", path: "scripts/install_maven.sh"
+      node1.vm.provision "shell", path: "scripts/create_cluster.sh"
+      node1.vm.network "forwarded_port", guest: 8080, host: 8080
+      node1.vm.provider "virtualbox" do |v|
+        v.memory = 5120
+        #v.memory = 6144
+        v.cpus = 2
+        v.customize ['modifyvm', :id, '--cableconnected1', 'on']
+        v.name = "hdp_singlenode"
+      end
+    end
+  end

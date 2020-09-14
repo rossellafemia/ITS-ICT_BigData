@@ -44,7 +44,7 @@ Copy the dataset in the right HDFS folder
 
 In this scenario, we will use a pig script to search the student with the maximun GPA (Grade Point Average)
 
-### Run the script on local machine
+### Run the script on local machine using Maven
 
 To run Pig on your local machine please ensure to have:
 
@@ -973,7 +973,7 @@ job_1599772615630_0004
 ## Case B: Sum the GPAs of students with the name starts for the same letter 
 
 
-### Run the script on local machine
+### Run the script on local machine using Maven
 
 To run Pig on your local machine please ensure to have:
 

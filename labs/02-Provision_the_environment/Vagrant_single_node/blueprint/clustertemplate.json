@@ -1,0 +1,13 @@
+{
+    "blueprint":"multinode-hdp",
+    "config_recommendation_strategy":"NEVER_APPLY",
+    "provision_action":"INSTALL_ONLY",
+    "configurations":[],
+    "host_groups":[
+        {"name":"host_group_1","hosts":[
+            {"fqdn":"hdp-singlenode.example.com"}
+            ]
+        }
+    ],
+    "Clusters":{"cluster_name":"mysinglenodecluster"}
+}

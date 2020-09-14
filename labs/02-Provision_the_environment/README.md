@@ -11,3 +11,7 @@ Follow the instructions [here](Hortonworks/README.md)
 ## Using Vagrant + Virtualbox + Ambari (three nodes VM)
 
 Follow the instructions [here](Vagrant/README.md)
+
+## Using Vagrant + Virtualbox + Ambari (single VM)
+
+Follow the instructions [here](Vagrant_single_node/README.md)
