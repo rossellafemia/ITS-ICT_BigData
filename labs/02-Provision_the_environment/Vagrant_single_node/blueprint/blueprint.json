@@ -789,6 +789,9 @@
         {
             "components": [
                 {
+                    "name": "APP_TIMELINE_SERVER"
+                },
+                {
                     "name": "NODEMANAGER"
                 },
                 {
@@ -826,9 +829,6 @@
                 },
                 {
                     "name": "DATANODE"
-                },
-                {
-                    "name": "APP_TIMELINE_SERVER"
                 },
                 {
                     "name": "RESOURCEMANAGER"

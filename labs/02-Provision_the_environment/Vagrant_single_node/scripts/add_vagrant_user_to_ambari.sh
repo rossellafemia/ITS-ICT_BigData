@@ -1,2 +1,2 @@
 curl -iv -u admin:admin -H "X-Requested-By: ambari" -X POST -d '{"Users/user_name":"vagrant","Users/password":"vagrant","Users/active":"true","Users/admin":"false"}' http://localhost:8080/api/v1/users
-curl -iv -u admin:admin -H "X-Requested-By: ambari" -X POST -d '[{"PrivilegeInfo": {"permission_name":"CLUSTER.USER","principal_name":"vagrant","principal_type":"USER"}}]' http://localhost:8080/api/v1/clusters/mycluster/privileges
+#curl -iv -u admin:admin -H "X-Requested-By: ambari" -X POST -d '[{"PrivilegeInfo": {"permission_name":"CLUSTER.USER","principal_name":"vagrant","principal_type":"USER"}}]' http://localhost:8080/api/v1/clusters/mycluster/privileges
