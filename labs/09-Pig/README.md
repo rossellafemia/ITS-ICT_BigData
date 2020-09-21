@@ -37,7 +37,7 @@ Create the HDFS input folder
 Copy the dataset in the right HDFS folder
 
 ```console
-[vagrant@node1 09-Pig]$ hadoop fs -put lab9_input/students.csv lab9_input
+[vagrant@node1 09-Pig]$ hadoop fs -put ../../datasets/students.csv lab9_input
 ```
 
 ## Case A: search for the maximun GPA
