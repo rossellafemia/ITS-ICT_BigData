@@ -8,6 +8,8 @@ Vagrant.configure(2) do |config|
       node1.vm.synced_folder "../../..", "/usr/src/git_repo"
       node1.vm.network "private_network", ip: "192.168.199.2"
       node1.vm.hostname = "node1.example.com"
+      node1.vm.provision "shell", inline: "sudo yum install -y dos2unix"
+      node1.vm.provision "shell", inline: "find /usr/src/git_repo/labs/02-Provision_the_environment/Vagrant/scripts -type f -print0 | xargs -0 dos2unix"
       node1.vm.provision "shell", path: "scripts/install_ambari_server.sh"
       node1.vm.provision "shell", path: "scripts/link_repo_to_vagrant_user.sh"
       node1.vm.provision "shell", path: "scripts/install_pig_0.17.sh"
@@ -25,6 +27,8 @@ Vagrant.configure(2) do |config|
       node2.vm.box = "centos/7"
       node2.vm.network "private_network", ip: "192.168.199.3"
       node2.vm.hostname = "node2.example.com"
+      node2.vm.provision "shell", inline: "sudo yum install -y dos2unix"
+      node2.vm.provision "shell", inline: "find /usr/src/git_repo/labs/02-Provision_the_environment/Vagrant/scripts -type f -print0 | xargs -0 dos2unix"
       node2.vm.provision "shell", path: "scripts/install_ambari_agent.sh"
       node2.vm.provider "virtualbox" do |v|
         v.memory = 2048
@@ -38,6 +42,8 @@ Vagrant.configure(2) do |config|
       node3.vm.box = "centos/7"
       node3.vm.network "private_network", ip: "192.168.199.4"
       node3.vm.hostname = "node3.example.com"
+      node3.vm.provision "shell", inline: "sudo yum install -y dos2unix"
+      node3.vm.provision "shell", inline: "find /usr/src/git_repo/labs/02-Provision_the_environment/Vagrant/scripts -type f -print0 | xargs -0 dos2unix"
       node3.vm.provision "shell", path: "scripts/install_ambari_agent.sh"
       node3.vm.provision "shell", path: "scripts/create_cluster.sh"
       #node3.vm.provision "shell", inline: "sleep 300"
