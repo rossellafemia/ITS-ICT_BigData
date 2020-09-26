@@ -1,4 +1,7 @@
 
+
+yum -y install unzip
+
 curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip -o apache-maven-3.6.3-bin.zip 
 unzip apache-maven-3.6.3-bin.zip 
 sudo cp -rf apache-maven-3.6.3 /opt/

@@ -2,7 +2,8 @@
 # Disable SELinux
 setenforce 0
 
-yum -y install wget
+sudo yum -y install wget
+sudo yum install mysql-connector-java -y
 
 # Download Ambari Repository
 #wget -nv https://archive.cloudera.com/p/ambari/centos7/2.x/updates/2.7.5.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
@@ -27,6 +28,7 @@ sudo perl -p -i -e "s/agent\.task\.timeout=900/agent\.task\.timeout=3600/g" /etc
 echo "ambari.post.user.creation.hook.enabled=true" >> /etc/ambari-server/conf/ambari.properties
 echo "ambari.post.user.creation.hook=/var/lib/ambari-server/resources/scripts/post-user-creation-hook.sh" >> /etc/ambari-server/conf/ambari.properties
 
+sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
 
 # start ambari-server
 ambari-server start
