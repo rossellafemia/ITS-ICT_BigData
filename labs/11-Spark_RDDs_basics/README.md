@@ -34,7 +34,7 @@ $ mvn exec:exec \
   -P \<EXAMPLE NAME\>
 ```
 
-Make sure to change\<EXAMPLE NAME\> with the real example's name before running the previous command (ie: WordCount).
+Make sure to change \<EXAMPLE NAME\> with the real example's name before running the previous command (ie: WordCount).
 
 ## Run examples on YARN cluster
 
@@ -77,6 +77,8 @@ Submit Spark job on the cluster
   --deploy-mode cluster \
   target/spark-rdds-basics-1.0-SNAPSHOT.jar 
 ```
+
+Make sure to change \<EXAMPLE FULLY QUALIFIED MAIN CLASS NAME\> with the real example's fully qualified main class name previous command (ie: it.sunnyvale.academy.sparkrddsbasics.WordCount).
 
 To see the job's output run
 
