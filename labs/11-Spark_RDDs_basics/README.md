@@ -18,7 +18,7 @@ To run the examples on a YARN cluster, the following prerequisites must be met:
 
 - Having completed labs 02 (Provision the environment) and 11 (Spark installation)
 
-## Run example locally
+## Run examples locally
 
 Compile the source code
 
@@ -36,7 +36,7 @@ $ mvn exec:exec \
 
 Make sure to change\<EXAMPLE NAME\> with the real example's name before running the previous command (ie: WordCount).
 
-## Run example on YARN cluster
+## Run examples on YARN cluster
 
 Go to path **ITS-ICT_BigData/labs/02-Provision_the_environment/Vagrant** and connect to node 1.
 
