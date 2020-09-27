@@ -36,6 +36,8 @@
 
 [04 - COVID pandemic insight with Pig](assignments/04-COVID_pandemic_insight_with_Pig/README.md)
 
+[05 - Couting words using Spark RDDs](assignments/05-Couting_words_using_Spark_RDDs/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
