@@ -22,6 +22,10 @@
 
 [09 - Pig](labs/09-Pig/README.md)
 
+[10 - Spark installation](labs/10-Spark_installation/README.md)
+
+[11 - Spark RDDs basics](labs/11-Spark_RDDs_basics/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)

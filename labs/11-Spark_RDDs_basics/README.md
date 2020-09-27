@@ -1,15 +1,88 @@
 
+## Spark RDDs (Resilient Distributed Datasets) basics
 
-hadoop fs -mkdir lab11_input
+This lab contains multiple examples about the basics of RDDs (Resilient Distributed Datasets).
 
-hadoop fs -put ../../datasets/constitution.txt lab11_input
+Here's a list about the example included:
 
-mvn clean && mvn package
+- FlatMap + CountByValue (example name: WordCount, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.WordCount)
 
-spark-submit \
-  --class it.sunnyvale.academy.sparkrddsbasics.WordCount \
+## Prerequisites
+
+To run the examples on your local machine, the following prerequisites must be met:
+
+- JDK 1.8 or above must be installed
+- Maven 3.6 or above must be installed
+
+To run the examples on a YARN cluster, the following prerequisites must be met:
+
+- Having completed labs 02 (Provision the environment) and 11 (Spark installation)
+
+## Run example locally
+
+Compile the source code
+
+```console
+$ mvn clean && package
+```
+
+Run the example of your choice
+
+```console
+$ mvn exec:exec \
+  -Dspark.master=local \
+  -P \<EXAMPLE NAME\>
+```
+
+Make sure to change\<EXAMPLE NAME\> with the real example's name before running the previous command (ie: WordCount).
+
+## Run example on YARN cluster
+
+Go to path **ITS-ICT_BigData/labs/02-Provision_the_environment/Vagrant** and connect to node 1.
+
+```console
+$ vagrant ssh node1 
+[vagrant@node1 ~]$ 
+```
+
+Move to this lab's home directory
+
+```console
+[vagrant@node1 ~]$ cd **ITS-ICT_BigData/labs/11-Spark_RDDs_basics
+```
+
+Create the lab input directory on HDFS
+
+```console
+[vagrant@node1]$ hadoop fs -mkdir lab11_input
+```
+
+To simplify the operation of loading the input datasets on HDFS, a script has been provided. Run it with the command:
+
+```console
+[vagrant@node1]$ ./copy_input_datasets.sh 
+```
+
+Copile and package the application
+
+```console
+[vagrant@node1]$ mvn clean && mvn package
+```
+
+Submit Spark job on the cluster
+
+```console
+[vagrant@node1]$ spark-submit \
+  --class \<EXAMPLE FULLY QUALIFIED CLASS NAME\> \
   --deploy-mode cluster \
   target/spark-rdds-basics-1.0-SNAPSHOT.jar 
+```
 
+To see the job's output run
 
-yarn logs -applicationId \<application ID\> (yarn logs -applicationId application_1601154210621_0006)
+```console
+[vagrant@node1]$ yarn logs -applicationId \<APPLICATION ID\>
+```
+
+Application ID is showed as part of the `spark-submit` command (ie: application_1601154210621_0006)
+
