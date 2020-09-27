@@ -23,7 +23,7 @@ To run the examples on a YARN cluster, the following prerequisites must be met:
 Compile the source code
 
 ```console
-$ mvn clean && package
+$ mvn clean &&  mvn package
 ```
 
 Run the example of your choice
