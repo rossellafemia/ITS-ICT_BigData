@@ -31,7 +31,7 @@ Run the example of your choice
 ```console
 $ mvn exec:exec \
   -Dspark.master=local \
-  -P \<EXAMPLE NAME\>
+  -P <EXAMPLE NAME>
 ```
 
 Make sure to change \<EXAMPLE NAME\> with the real example's name before running the previous command (ie: WordCount).
@@ -73,7 +73,8 @@ Submit Spark job on the cluster
 
 ```console
 [vagrant@node1]$ spark-submit \
-  --class \<EXAMPLE FULLY QUALIFIED CLASS NAME\> \
+  --master yarn \
+  --class <EXAMPLE FULLY QUALIFIED CLASS NAME> \
   --deploy-mode cluster \
   target/spark-rdds-basics-1.0-SNAPSHOT.jar 
 ```

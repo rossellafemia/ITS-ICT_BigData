@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class WordCount {
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName("wordCounts");
+        SparkConf conf = new SparkConf().setAppName("WordCount");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> lines = sc.textFile("lab11_input/constitution.txt");
