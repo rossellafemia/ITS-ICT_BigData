@@ -76,6 +76,8 @@ Submit Spark job on the cluster
 ```console
 [vagrant@node1]$ spark-submit \
   --master yarn \
+  --driver-memory 512m  \
+  --executor-memory 512m \
   --class <EXAMPLE FULLY QUALIFIED CLASS NAME> \
   --deploy-mode cluster \
   target/spark-rdds-basics-1.0-SNAPSHOT.jar 

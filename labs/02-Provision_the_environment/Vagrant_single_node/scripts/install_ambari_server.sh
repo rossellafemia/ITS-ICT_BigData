@@ -22,8 +22,11 @@ ambari-server setup -s --java-home=/usr/lib/jvm/jre/
 sed -i 's/verify=platform_default/verify=disable/' /etc/python/cert-verification.cfg || echo "could not disable ssl checks"
 
 # extend default timeouts
-sudo perl -p -i -e "s/agent\.package\.install\.task\.timeout=1800/agent\.package\.install\.task\.timeout=14400/g" /etc/ambari-server/conf/ambari.properties 
+#sudo perl -p -i -e "s/agent\.package\.install\.task\.timeout=1800/agent\.package\.install\.task\.timeout=14400/g" /etc/ambari-server/conf/ambari.properties 
 sudo perl -p -i -e "s/agent\.task\.timeout=900/agent\.task\.timeout=3600/g" /etc/ambari-server/conf/ambari.properties 
+sed -e 's/\(agent.task.timeout=\).*/\12700/' \
+        -e 's/\(agent.package.install.task.timeout=\).*/\12700/' \
+        -i /etc/ambari-server/conf/ambari.properties
 
 echo "ambari.post.user.creation.hook.enabled=true" >> /etc/ambari-server/conf/ambari.properties
 echo "ambari.post.user.creation.hook=/var/lib/ambari-server/resources/scripts/post-user-creation-hook.sh" >> /etc/ambari-server/conf/ambari.properties
