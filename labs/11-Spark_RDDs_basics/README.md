@@ -5,6 +5,8 @@ This lab contains multiple examples about the basics of RDDs (Resilient Distribu
 
 Here's a list about the example included:
 
+- Map + Collect (example name: MapExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.MapExample)
+- FlatMap + Collect  (example name: FlatMapExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.FlatMapExample)
 - FlatMap + CountByValue (example name: WordCount, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.WordCount)
 
 ## Prerequisites
@@ -34,7 +36,7 @@ $ mvn exec:exec \
   -P <EXAMPLE NAME>
 ```
 
-Make sure to change \<EXAMPLE NAME\> with the real example's name before running the previous command (ie: WordCount).
+Make sure to change **\<EXAMPLE NAME\>** with the real example's name before running the previous command (ie: WordCount).
 
 ## Run examples on YARN cluster
 
@@ -48,7 +50,7 @@ $ vagrant ssh node1
 Move to this lab's home directory
 
 ```console
-[vagrant@node1 ~]$ cd **ITS-ICT_BigData/labs/11-Spark_RDDs_basics
+[vagrant@node1 ~]$ cd ITS-ICT_BigData/labs/11-Spark_RDDs_basics
 ```
 
 Create the lab input directory on HDFS
@@ -79,7 +81,7 @@ Submit Spark job on the cluster
   target/spark-rdds-basics-1.0-SNAPSHOT.jar 
 ```
 
-Make sure to change \<EXAMPLE FULLY QUALIFIED MAIN CLASS NAME\> with the real example's fully qualified main class name previous command (ie: it.sunnyvale.academy.sparkrddsbasics.WordCount).
+Make sure to change **\<EXAMPLE FULLY QUALIFIED MAIN CLASS NAME\>** with the real example's fully qualified main class name in previous command (ie: it.sunnyvale.academy.sparkrddsbasics.WordCount).
 
 To see the job's output run
 
