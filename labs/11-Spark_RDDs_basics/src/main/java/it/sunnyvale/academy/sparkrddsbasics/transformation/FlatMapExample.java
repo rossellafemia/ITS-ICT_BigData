@@ -10,7 +10,7 @@ import java.util.List;
 /*
 Run me:
 
-$ mvn exec:exec \                                                                                                                                                        ✔  88  17:12:22
+$ mvn exec:exec \
   -Dspark.master=local \
   -P FlatMapExample
 
@@ -24,8 +24,8 @@ public class FlatMapExample {
         List<String> list = Arrays.asList("Java","Scala","Hello world", "Java helps", "ITS ICT");
         JavaRDD<String> collectionRDD = sc.parallelize(list);
         JavaRDD<String> mappedRDD = collectionRDD.flatMap(s -> Arrays.asList(s.split(" ")).iterator());
-        List<String> uppercaseList  = mappedRDD.collect();
-        for (String element : uppercaseList) {
+        List<String> flatMappedList  = mappedRDD.collect();
+        for (String element : flatMappedList) {
             System.out.println(element);
         }
     }

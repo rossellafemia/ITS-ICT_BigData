@@ -7,6 +7,15 @@ import org.apache.spark.api.java.JavaSparkContext;
 import java.util.Arrays;
 import java.util.Map;
 
+/*
+Run me:
+
+$ mvn exec:exec \
+  -Dspark.master=local \
+  -P WordCount
+
+*/
+
 public class WordCount {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("WordCount");

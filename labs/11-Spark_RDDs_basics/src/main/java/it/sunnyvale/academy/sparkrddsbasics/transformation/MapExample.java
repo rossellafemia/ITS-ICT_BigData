@@ -11,9 +11,15 @@ import java.util.List;
 /*
 Run me:
 
-$ mvn exec:exec \                                                                                                                                                        ✔  88  17:12:22
+$ mvn exec:exec \
   -Dspark.master=local \
   -P MapExample
+
+$ spark-submit \
+  --master yarn \
+  --class it.sunnyvale.academy.sparkrddsbasics.transformation.MapExample \
+  --deploy-mode cluster \
+  target/spark-rdds-basics-1.0-SNAPSHOT.jar
 
  */
 public class MapExample {
