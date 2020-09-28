@@ -86,8 +86,13 @@ Make sure to change **\<EXAMPLE FULLY QUALIFIED MAIN CLASS NAME\>** with the rea
 To see the job's output run
 
 ```console
-[vagrant@node1]$ yarn logs -applicationId \<APPLICATION ID\>
+[vagrant@node1]$ yarn logs -applicationId <APPLICATION ID>
 ```
 
 Application ID is showed as part of the `spark-submit` command (ie: application_1601154210621_0006)
 
+To kill an application:
+
+```console
+[vagrant@node1]$ yarn application -kill <APPLICATION ID>
+```
