@@ -7,6 +7,7 @@ Here's a list about the example included:
 
 - Map + Collect (example name: MapExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.MapExample)
 - FlatMap + Collect  (example name: FlatMapExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.FlatMapExample)
+- Filter + Collect  (example name: FilterExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.FilterExample)
 - FlatMap + CountByValue (example name: WordCount, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.WordCount)
 
 ## Prerequisites
