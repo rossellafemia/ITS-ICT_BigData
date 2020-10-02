@@ -10,15 +10,13 @@ import java.util.List;
 /*
 Run me:
 
-$ mvn exec:exec \
-  -Dspark.master=local \
-  -P FilterExample
+$ mvn exec:exec -Dspark.master=local -P FilterExample
 
  */
 public class FilterExample {
 
     /*
-     * flatMapStringListUsingSpace
+     * filterStringsStartingByJ
      */
     public static void filterStringsStartingByJ(JavaSparkContext sc){
         List<String> list = Arrays.asList("Java","Scala","Hello world", "Java helps", "ITS ICT");

@@ -10,9 +10,7 @@ import java.util.List;
 /*
 Run me:
 
-$ mvn exec:exec \
-  -Dspark.master=local \
-  -P FlatMapExample
+$ mvn exec:exec -Dspark.master=local -P FlatMapExample
 
  */
 public class FlatMapExample {

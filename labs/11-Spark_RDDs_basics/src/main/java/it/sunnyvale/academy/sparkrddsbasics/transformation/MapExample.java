@@ -11,9 +11,7 @@ import java.util.List;
 /*
 Run me:
 
-$ mvn exec:exec \
-  -Dspark.master=local \
-  -P MapExample
+$ mvn exec:exec -Dspark.master=local -P MapExample
 
 $ spark-submit \
   --master yarn \
