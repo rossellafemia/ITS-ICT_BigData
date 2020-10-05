@@ -37,6 +37,8 @@
 [04 - COVID pandemic insight with Pig](assignments/04-COVID_pandemic_insight_with_Pig/README.md)
 
 [05 - Couting words using Spark RDDs](assignments/05-Couting_words_using_Spark_RDDs/README.md)
+ 
+[06 - Counting succeeded SpaceX launches with Spark](assignments/06-Counting_succeeded_SpaceX_launches_with_Spark/README.md)
 
 ## Appendices
 
