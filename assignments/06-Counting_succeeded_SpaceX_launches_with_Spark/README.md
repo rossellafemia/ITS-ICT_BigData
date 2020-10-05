@@ -1,6 +1,8 @@
 # Counting succeeded SpaceX launches with Spark
 
-Count the total number of succeeded SpaceX lanches using the dataset [constitution.txt](../datasets/spacex_launches.csv)
+Count the total number of succeeded SpaceX lanches using the dataset [constitution.txt](../datasets/spacex_launches.csv).
+
+Please have a look of the first row to discover the column headers (**launch_success** is the 4th column).
 
 As a reference fot this assignment, please have a look of the lab [11 - Spark RDDs basics](../labs/11-Spark_RDDs_basics/README.md)
 
