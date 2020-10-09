@@ -10,18 +10,18 @@ import java.util.List;
 /*
 Run me:
 
-$ mvn exec:exec -Dspark.master=local -P FilterExample
+$ mvn exec:exec -Dspark.master=local -P DistinctExample
 
  */
-public class FilterExample {
+public class DistinctExample {
 
     /*
-     * filterStringsStartingByJ
+     * distinct
      */
-    public static void filterStringsStartingByJ(JavaSparkContext sc){
-        List<String> list = Arrays.asList("Java","Scala","Hello world", "Java helps", "ITS ICT");
+    public static void distinct(JavaSparkContext sc){
+        List<String> list = Arrays.asList("Java", "Scala","Hello world", "Java", "ITS ICT", "Scala", "World", "world");
         JavaRDD<String> collectionRDD = sc.parallelize(list);
-        JavaRDD<String> rdd1 = collectionRDD.filter(s -> s.startsWith("J"));
+        JavaRDD<String> rdd1 = collectionRDD.distinct();
         List<String> result  = rdd1.collect();
         for (String element : result) {
             System.out.println(element);
@@ -31,9 +31,9 @@ public class FilterExample {
 
 
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName("FlatMapExamples");
+        SparkConf conf = new SparkConf().setAppName("DistinctExample");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        filterStringsStartingByJ(sc);
+        distinct(sc);
     }
 }
