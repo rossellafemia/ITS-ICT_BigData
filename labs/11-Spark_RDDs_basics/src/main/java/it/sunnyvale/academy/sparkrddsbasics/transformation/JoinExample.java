@@ -24,6 +24,7 @@ public class JoinExample {
 
     /*
      * rightOuterJoinUsersAndAddresses (RIGHT OUTER JOIN operation)
+     * In right join, all the rows from the user RDD are returned irrespective of whether there is a match in the addresses RDD
      */
     public static void rightOuterJoinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
         // Join the two RDDs by Users' key
@@ -37,6 +38,7 @@ public class JoinExample {
 
     /*
      * leftOuterJoinUsersAndAddresses (LEFT OUTER JOIN operation)
+     * In left join, all the rows from the addresses RDD are returned irrespective of whether there is a match in the user RDD
      */
     public static void leftOuterJoinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
         // Join the two RDDs by Users' key
@@ -51,7 +53,6 @@ public class JoinExample {
     /*
      * fullOuterJoinUsersAndAddresses (FULL OUTER JOIN operation)
      * Keep records from both the RDDs along with the associated null values in the respective users/addresses RDDs.
-     *
      */
     public static void fullOuterJoinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
         // Join the two RDDs by Users' key
@@ -103,10 +104,10 @@ public class JoinExample {
         // joinUsersAndAddresses (INNER JOIN operation)
         joinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
 
-        // rightOuterJoinUsersAndAddresses
+        // rightOuterJoinUsersAndAddresses (RIGHT OUTER JOIN operation)
         rightOuterJoinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
 
-        // leftOuterJoinUsersAndAddresses
+        // leftOuterJoinUsersAndAddresses (LEFT OUTER JOIN operation)
         leftOuterJoinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
 
         // fullOuterJoinUsersAndAddresses (FULL OUTER JOIN operation)
