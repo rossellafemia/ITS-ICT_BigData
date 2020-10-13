@@ -11,7 +11,7 @@ Dataset **spacex_launches.csv** is structured as follows:
 Use the column **rocket_id** to INNER JOIN the dataset  **spacex_rockets.csv**, which is structured as follows:
 
 ```csv
-#rocket_id;cost_per_launch
+#id;rocket_id;cost_per_launch
 ```
 
 Then print a result similar to:
