@@ -1,9 +1,11 @@
 package it.sunnyvale.academy.sparkrddsbasics.transformation;
 
+import it.sunnyvale.academy.sparkrddsbasics.utils.RDDUtils;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.Optional;
 import scala.Tuple2;
 
 /*
@@ -21,52 +23,93 @@ $ spark-submit \
 public class JoinExample {
 
     /*
-     * joinUsersAndAddresses
+     * rightOuterJoinUsersAndAddresses (RIGHT OUTER JOIN operation)
      */
-    public static void joinUsersAndAddresses(JavaSparkContext sc){
+    public static void rightOuterJoinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
+        // Join the two RDDs by Users' key
+        JavaPairRDD<Integer, Tuple2<Optional<String[]>, String[]>> joined = keyedAddressesRDD.rightOuterJoin(keyedUsersRDD);
 
-        // Read the users file
-        JavaRDD<String> usersRDD = sc.textFile("lab11_input/users.csv");
+        // Print the result
+        System.out.println("== RIGHT OUTER JOIN ==");
+        RDDUtils.printPairRDDAsTable(joined);
+        System.out.println();
+    }
 
-        // Filter out header row starting with '#'
-        JavaRDD<String>  filteredUsersRDD = usersRDD.filter(s -> !s.substring(0,1).equals("#"));
+    /*
+     * leftOuterJoinUsersAndAddresses (LEFT OUTER JOIN operation)
+     */
+    public static void leftOuterJoinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
+        // Join the two RDDs by Users' key
+        JavaPairRDD<Integer, Tuple2<String[], Optional<String[]>>> joined = keyedAddressesRDD.leftOuterJoin(keyedUsersRDD);
 
-        // Create a JavaPairRDD object
-        JavaPairRDD<Integer, String[]> keyedUsersRDD = filteredUsersRDD.mapToPair(
-                s-> new Tuple2(Integer.parseInt(s.split(",")[0]), s.split(",")[1])
-        );
+        // Print the result
+        System.out.println("== LEFT OUTER JOIN ==");
+        RDDUtils.printPairRDDAsTable(joined);
+        System.out.println();
+    }
 
-        System.out.println(keyedUsersRDD.collectAsMap());
+    /*
+     * fullOuterJoinUsersAndAddresses (FULL OUTER JOIN operation)
+     * Keep records from both the RDDs along with the associated null values in the respective users/addresses RDDs.
+     *
+     */
+    public static void fullOuterJoinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
+        // Join the two RDDs by Users' key
+        JavaPairRDD<Integer, Tuple2<Optional<String[]>, Optional<String[]>>> joined = keyedAddressesRDD.fullOuterJoin(keyedUsersRDD);
 
+        // Print the result
+        System.out.println("== FULL OUTER JOIN ==");
+        RDDUtils.printPairRDDAsTable(joined);
+        System.out.println();
+    }
 
-        // Read the addresses file
-        JavaRDD<String> addressesRDD = sc.textFile("lab11_input/addresses.csv");
-
-        // Filter out header row starting with '#'
-        JavaRDD<String>  filteredAddressesRDD = addressesRDD.filter(s -> !s.substring(0,1).equals("#"));
-
-        // Create a JavaPairRDD object
-        JavaPairRDD<Integer, String[]> keyedAddressesRDD = filteredAddressesRDD.mapToPair(
-                s-> new Tuple2(Integer.parseInt(s.split(",")[1]), s.split(",")[2])
-        );
-
-        // Print the
-        System.out.println(keyedAddressesRDD.collectAsMap());
-
-
+    /*
+     * joinUsersAndAddresses (INNER JOIN operation)
+     * Basically removes all the things that are not common in both the RDD (i.e. users not belonging to an address
+     * or addresses with an unknown user)
+     */
+    public static void joinUsersAndAddresses(JavaPairRDD<Integer, String[]> keyedUsersRDD, JavaPairRDD<Integer, String[]> keyedAddressesRDD){
         // Join the two RDDs by Users' key
         JavaPairRDD<Integer, Tuple2<String[], String[]>> joined = keyedAddressesRDD.join(keyedUsersRDD);
 
-        System.out.println(joined.collectAsMap());
-
+        // Print the result
+        System.out.println("== INNER JOIN ==");
+        RDDUtils.printPairRDDAsTable(joined);
+        System.out.println();
     }
 
-
-
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName("MapExamples");
+
+        // Initialize Spark Context
+        SparkConf conf = new SparkConf().setAppName("JoinExamples");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        joinUsersAndAddresses(sc);
+        // Read the users file and skip header line
+        JavaRDD<String> usersRDD = sc.textFile("lab11_input/users.csv").filter(s -> !s.substring(0,1).equals("#"));
+
+        // Read the addresses file and skip header line
+        JavaRDD<String> addressesRDD = sc.textFile("lab11_input/addresses.csv").filter(s -> !s.substring(0,1).equals("#"));
+
+        // Create a JavaPairRDD object
+        JavaPairRDD<Integer, String[]> keyedUsersRDD = usersRDD.mapToPair(
+                s-> new Tuple2(Integer.parseInt(s.split(",")[0]), s.split(",")[1])
+        );
+
+        // Create a JavaPairRDD object
+        JavaPairRDD<Integer, String[]> keyedAddressesRDD = addressesRDD.mapToPair(
+                s-> new Tuple2(Integer.parseInt(s.split(",")[1]), s.split(",")[2])
+        );
+
+        // joinUsersAndAddresses (INNER JOIN operation)
+        joinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
+
+        // rightOuterJoinUsersAndAddresses
+        rightOuterJoinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
+
+        // leftOuterJoinUsersAndAddresses
+        leftOuterJoinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
+
+        // fullOuterJoinUsersAndAddresses (FULL OUTER JOIN operation)
+        fullOuterJoinUsersAndAddresses(keyedUsersRDD, keyedAddressesRDD);
     }
 }

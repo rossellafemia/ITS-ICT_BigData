@@ -1,4 +1,4 @@
-#address key, user key, address, zip, city, province, country
+#address key, user key, address
 1,2,Via Roma 5 10041 Carignano Turin Italy
 2,4,Corso Europa 5 10029 Villastellone Turin Italy
 3,1,Via Roma 5 10041 Carignano Turin Italy
@@ -7,3 +7,4 @@
 6,8,Corso Traiano 119 10127 Turin Turin Italy
 7,3,Via Palazzo di Città 39 10023 Chieri Turin Italy
 8,6,Via Salotto 10 10041 Carignano Turin Italy
+9,15,Via Ermanno Cossolo 79 10029 Villastellone Turin Italy

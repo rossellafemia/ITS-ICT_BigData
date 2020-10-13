@@ -1,0 +1,5 @@
+#id;rocket_id;cost_per_launch
+1;falcon1;6700000
+2;falcon9;50000000
+3;falconheavy;90000000
+4;starship;7000000

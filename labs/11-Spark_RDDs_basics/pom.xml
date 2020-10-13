@@ -21,6 +21,12 @@
             <artifactId>spark-core_2.12</artifactId>
             <version>3.0.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.12</artifactId>
+            <version>3.0.1</version>
+        </dependency>
     </dependencies>
     <profiles>
         <profile>
@@ -177,6 +183,17 @@
             <id>JoinExample</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemProperties>
+                                <property>
+                                    <name>log4j.configuration</name>
+                                    <value>src/main/resources/log4j.properties</value>
+                                </property>
+                            </systemProperties>
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
