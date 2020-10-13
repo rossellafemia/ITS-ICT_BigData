@@ -40,6 +40,8 @@
  
 [06 - Counting succeeded SpaceX launches with Spark](assignments/06-Counting_succeeded_SpaceX_launches_with_Spark/README.md)
 
+[07 - Find SpaceX rocket launch cost](assignments/07-Find_SpaceX_rocket_launch_cost/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)

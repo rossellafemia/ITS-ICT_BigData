@@ -14,8 +14,21 @@ Use the column **rocket_id** to INNER JOIN the dataset  **spacex_rockets.csv**, 
 #rocket_id;cost_per_launch
 ```
 
-Then print similar to:
+Then print a result similar to:
 
 ```
-(1,())
+(falcon1,(6700000,FalconSat))
+(falcon1,(6700000,DemoSat))
+(falcon1,(6700000,Trailblazer))
+(falcon1,(6700000,RatSat))
+(falcon1,(6700000,RazakSat))
+(falconheavy,(90000000,Falcon Heavy Test Flight))
+(falconheavy,(90000000,ArabSat 6A))
+(falconheavy,(90000000,STP-2))
+(falcon9,(50000000,Falcon 9 Test Flight))
+(falcon9,(50000000,COTS 1))
+(falcon9,(50000000,COTS 2))
+...
 ```
+
+Solution is provided [here](./solution)

@@ -10,7 +10,7 @@ Here's a list about the example included:
 - Filter + Collect  (example name: FilterExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.FilterExample)
 - FlatMap + CountByValue (example name: WordCount, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.WordCount)
 - Distinct + Collect  (example name: DistinctExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.DistinctExample)
-- Join + Collect  (example name: JoinExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.JoinExample)
+- Join (example name: JoinExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.JoinExample)
 
 
 ## Prerequisites
