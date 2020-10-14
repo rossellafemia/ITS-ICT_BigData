@@ -52,19 +52,7 @@ public class ReduceExample {
         System.out.println("== MIN ==");
         System.out.println(min);
     }
-
-    /*
-     * avg ()
-     * Combine values with the same key.
-     public static void min(JavaSparkContext sc){
-        List<Integer> list = Arrays.asList(1, 2,100, 49, 15, 1, 800, 87);
-        JavaRDD<Integer> collectionRDD = sc.parallelize(list);
-        JavaRDD<Integer> rdd1 = collectionRDD.distinct();
-        long avg = rdd1.map(x => (x, 1))
-.reduce((x, y) => (x._1 + y._1, x._2 + y._2))
-        System.out.println(avg);
-    } */
-
+    
     /*
      * countOccurences (reduceByKey operation)
      * Combine values with the same key.
