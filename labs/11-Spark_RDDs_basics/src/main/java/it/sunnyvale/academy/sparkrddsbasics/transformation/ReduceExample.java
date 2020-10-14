@@ -22,8 +22,7 @@ public class ReduceExample {
      */
     public static void sum(JavaSparkContext sc){
         List<Integer> list = Arrays.asList(1, 2,100, 49, 15, 1, 800, 87);
-        JavaRDD<Integer> collectionRDD = sc.parallelize(list);
-        JavaRDD<Integer> rdd1 = collectionRDD.distinct();
+        JavaRDD<Integer> rdd1 = sc.parallelize(list);
         long sum = rdd1.reduce((a,b)->a+b);
         System.out.println("== SUM ==");
         System.out.println(sum);
@@ -34,8 +33,7 @@ public class ReduceExample {
      */
     public static void max(JavaSparkContext sc){
         List<Integer> list = Arrays.asList(1, 2,100, 49, 15, 1, 800, 87);
-        JavaRDD<Integer> collectionRDD = sc.parallelize(list);
-        JavaRDD<Integer> rdd1 = collectionRDD.distinct();
+        JavaRDD<Integer> rdd1 = sc.parallelize(list);
         long max = rdd1.reduce((a,b)->Math.max(a,b));
         System.out.println("== MAX ==");
         System.out.println(max);
@@ -63,7 +61,6 @@ public class ReduceExample {
         JavaPairRDD<String, Integer> rddX = rdd.mapToPair(e -> new Tuple2<String, Integer>(e, 1));
         JavaPairRDD<String, Integer> reduced = rddX.reduceByKey((accum, n) -> (accum + n));
         System.out.println("== COUNT ==");
-        rddX.groupByKey();
         reduced.foreach(item -> System.out.println(item));
     }
 
