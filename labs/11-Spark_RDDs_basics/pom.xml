@@ -220,6 +220,36 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>ReduceExample</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-Dspark.master=local</argument>
+                                <!-- Classpath -->
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <!-- Main class -->
+                                <argument>it.sunnyvale.academy.sparkrddsbasics.transformation.ReduceExample</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 

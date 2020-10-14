@@ -102,3 +102,6 @@ To kill an application:
 ```console
 [vagrant@node1]$ yarn application -kill <APPLICATION ID>
 ```
+
+More at https://spark.apache.org/docs/2.2.1/rdd-programming-guide.html
+
