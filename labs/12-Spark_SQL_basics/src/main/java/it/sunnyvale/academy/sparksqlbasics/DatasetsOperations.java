@@ -10,9 +10,7 @@ import org.apache.spark.sql.SparkSession;
 /*
 Run me:
 
-$ mvn exec:exec \
-  -Dpark.master=local \
-  -P DatasetsOperations
+$ mvn exec:exec -Dpark.master=local -P DatasetsOperations
 
 $ spark-submit \
   --master yarn \

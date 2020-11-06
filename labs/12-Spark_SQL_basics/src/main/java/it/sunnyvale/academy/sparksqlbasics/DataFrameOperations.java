@@ -10,9 +10,7 @@ import static org.apache.spark.sql.functions.col;
 /*
 Run me:
 
-$ mvn exec:exec \
-  -Dpark.master=local \
-  -P DataFrameOperations
+$ mvn exec:exec -Dpark.master=local -P DataFrameOperations
 
 $ spark-submit \
   --master yarn \
