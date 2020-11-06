@@ -77,8 +77,8 @@ Submit Spark job on the cluster
 ```console
 [vagrant@node1]$ spark-submit \
   --master yarn \
-  --driver-memory 256m  \
-  --executor-memory 256m \
+  --driver-memory 512m  \
+  --executor-memory 512m \
   --class <EXAMPLE FULLY QUALIFIED CLASS NAME> \
   --deploy-mode cluster \
   target/spark-sql-basics-1.0-SNAPSHOT.jar 
