@@ -1,5 +1,7 @@
 package it.sunnyvale.academy.sparksqlbasics;
 
+import org.apache.spark.api.java.function.FilterFunction;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -54,6 +56,24 @@ public class DataFrameOperations {
         // Select people older than 21
         df
                 .filter(col("age").gt(21))
+                .show();
+
+        // filtering using Expressions
+        df
+                .filter("age < 21")
+                .show();
+
+        // filtering with Lambdas
+        df
+                .filter((FilterFunction<Row>) row -> row
+                                .getAs("firstName")
+                                .toString().startsWith("L"))
+                .show();
+
+        // columns
+        Column eyeColourColumn = df.col("eyeColor");
+        df
+                .filter(eyeColourColumn.geq("green"))
                 .show();
 
     }

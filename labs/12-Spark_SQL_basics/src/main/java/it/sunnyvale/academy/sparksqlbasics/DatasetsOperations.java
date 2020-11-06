@@ -37,25 +37,7 @@ public class DatasetsOperations {
                 .option("multiline", "true")
                 .json("lab12_input/users.json");
 
-        // filtering using Expressions
-        ds
-                .filter("age < 21")
-                .show();
 
-        // filtering with Lambdas
-        ds
-                .filter(
-                        (FilterFunction<Row>) row -> row
-                                .getAs("firstName")
-                                .toString().startsWith("L"))
-                .show();
-
-        // columns
-        Column eyeColourColumn = ds.col("eyeColor");
-        eyeColourColumn.geq("green");
-        ds
-                .filter(eyeColourColumn.geq("green"))
-                .show();
 
     }
 }
