@@ -30,12 +30,12 @@ public class SQLQueries {
                 .config("spark.some.config.option", "some-value")
                 .getOrCreate();
 
-        Dataset<Row> df = spark
+        Dataset<Row> ds = spark
                 .read()
                 .option("multiline", "true")
                 .json("lab12_input/users.json");
 
-        df.createOrReplaceTempView("users");
+        ds.createOrReplaceTempView("users");
 
         // Select all users
         Dataset<Row> sql1DF = spark.sql("SELECT * FROM users");

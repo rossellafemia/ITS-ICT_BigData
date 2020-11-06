@@ -11,6 +11,7 @@ Using the data provided in this [dataset](../../datasets/strava_activities.json)
 - Max speed
 - Longest moving time
 - Last and first activites
+- Count activities
 
 You may want to use Spark DataFrame and/or Spark SQL.
 

@@ -6,6 +6,7 @@ This lab contains multiple examples about the basics of Spark SQL.
 Here's a list about the example included:
 
 - DataFrameOperations (example name: DataFrameOperations, fully qualified main class: it.sunnyvale.academy.sparksqlbasics.DataFrameOperations)
+- DatasetsOperations (example name: DatasetsOperations, fully qualified main class: it.sunnyvale.academy.sparksqlbasics.DatasetsOperations)
 - SQLQueries (example name: SQLQueries, fully qualified main class: it.sunnyvale.academy.sparksqlbasics.SQLQueries)
 
 

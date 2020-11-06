@@ -89,6 +89,36 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>DatasetsOperations</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-Dspark.master=local</argument>
+                                <!-- Classpath -->
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <!-- Main class -->
+                                <argument>it.sunnyvale.academy.sparksqlbasics.DatasetsOperations</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 
