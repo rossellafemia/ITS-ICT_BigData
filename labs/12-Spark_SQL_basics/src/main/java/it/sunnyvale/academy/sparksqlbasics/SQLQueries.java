@@ -31,7 +31,7 @@ public class SQLQueries {
         Dataset<Row> ds = spark
                 .read()
                 .option("multiline", "true")
-                .json("lab12_input/users.json");
+                .json("lab12_input"+System.getProperty("file.separator")+"users.json");
 
         ds.createOrReplaceTempView("users");
 

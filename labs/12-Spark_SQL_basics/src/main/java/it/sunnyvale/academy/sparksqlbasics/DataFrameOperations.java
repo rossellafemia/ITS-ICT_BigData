@@ -33,7 +33,7 @@ public class DataFrameOperations {
         Dataset<Row> df = spark
                 .read()
                 .option("multiline", "true")
-                .json("lab12_input/users.json");
+                .json("lab12_input"+System.getProperty("file.separator")+"users.json");
 
         // print the JSON schema
         df.printSchema();
