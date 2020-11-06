@@ -2,6 +2,7 @@ package it.sunnyvale.academy.sparksqlbasics;
 
 
 import org.apache.spark.api.java.function.FilterFunction;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -36,9 +37,25 @@ public class DatasetsOperations {
                 .option("multiline", "true")
                 .json("lab12_input/users.json");
 
+        // filtering using Expressions
+        ds
+                .filter("age < 21")
+                .show();
 
+        // filtering with Lambdas
+        ds
+                .filter(
+                        (FilterFunction<Row>) row -> row
+                                .getAs("firstName")
+                                .toString().startsWith("L"))
+                .show();
 
-
+        // columns
+        Column eyeColourColumn = ds.col("eyeColor");
+        eyeColourColumn.geq("green");
+        ds
+                .filter(eyeColourColumn.geq("green"))
+                .show();
 
     }
 }
