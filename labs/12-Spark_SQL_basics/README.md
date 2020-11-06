@@ -1,16 +1,12 @@
 
-## Spark RDDs (Resilient Distributed Datasets) basics
+## Spark SQL  basics
 
-This lab contains multiple examples about the basics of RDDs (Resilient Distributed Datasets).
+This lab contains multiple examples about the basics of Spark SQL.
 
 Here's a list about the example included:
 
-- Map + Collect (example name: MapExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.MapExample)
-- FlatMap + Collect  (example name: FlatMapExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.FlatMapExample)
-- Filter + Collect  (example name: FilterExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.FilterExample)
-- FlatMap + CountByValue (example name: WordCount, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.WordCount)
-- Distinct + Collect  (example name: DistinctExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.DistinctExample)
-- Join (example name: JoinExample, fully qualified main class: it.sunnyvale.academy.sparkrddsbasics.transformation.JoinExample)
+- DataFrameOperations (example name: DataFrameOperations, fully qualified main class: it.sunnyvale.academy.sparksqlbasics.DataFrameOperations)
+- SQLQueries (example name: SQLQueries, fully qualified main class: it.sunnyvale.academy.sparksqlbasics.SQLQueries)
 
 
 ## Prerequisites
@@ -54,13 +50,13 @@ $ vagrant ssh node1
 Move to this lab's home directory
 
 ```console
-[vagrant@node1 ~]$ cd ITS-ICT_BigData/labs/11-Spark_RDDs_basics
+[vagrant@node1 ~]$ cd ITS-ICT_BigData/labs/12-Spark_SQL_basics
 ```
 
 Create the lab input directory on HDFS
 
 ```console
-[vagrant@node1]$ hadoop fs -mkdir lab11_input
+[vagrant@node1]$ hadoop fs -mkdir lab12_input
 ```
 
 To simplify the operation of loading the input datasets on HDFS, a script has been provided. Run it with the command:
@@ -80,14 +76,14 @@ Submit Spark job on the cluster
 ```console
 [vagrant@node1]$ spark-submit \
   --master yarn \
-  --driver-memory 512m  \
-  --executor-memory 512m \
+  --driver-memory 256m  \
+  --executor-memory 256m \
   --class <EXAMPLE FULLY QUALIFIED CLASS NAME> \
   --deploy-mode cluster \
-  target/spark-rdds-basics-1.0-SNAPSHOT.jar 
+  target/spark-sql-basics-1.0-SNAPSHOT.jar 
 ```
 
-Make sure to change **\<EXAMPLE FULLY QUALIFIED MAIN CLASS NAME\>** with the real example's fully qualified main class name in previous command (ie: it.sunnyvale.academy.sparkrddsbasics.WordCount).
+Make sure to change **\<EXAMPLE FULLY QUALIFIED MAIN CLASS NAME\>** with the real example's fully qualified main class name in previous command (ie: it.sunnyvale.academy.sparksqlbasics.SQLQueries).
 
 To see the job's output run
 
@@ -103,5 +99,5 @@ To kill an application:
 [vagrant@node1]$ yarn application -kill <APPLICATION ID>
 ```
 
-More at https://spark.apache.org/docs/2.2.1/rdd-programming-guide.html
+
 
