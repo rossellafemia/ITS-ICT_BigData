@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession;
 /*
 Run me:
 
-$ mvn exec:exec -Dpark.master=local -P SQLQueries
+$ mvn exec:exec -Dspark.master=local -P SQLQueries
 
 $ spark-submit \
   --master yarn \
