@@ -38,14 +38,23 @@ public class DataFrameOperations {
         // print the JSON schema
         df.printSchema();
 
+        // Show all
+        df.show();
+
         // Select only the "firstName" column
-        df.select("firstName").show();
+        df
+                .select("firstName")
+                .show();
 
         // Select everybody (firstName and age)
-        df.select(col("firstName"), col("age")).show();
+        df
+                .select(col("firstName"), col("age"))
+                .show();
 
         // Select people older than 21
-        df.filter(col("age").gt(21)).show();
+        df
+                .filter(col("age").gt(21))
+                .show();
 
     }
 }
