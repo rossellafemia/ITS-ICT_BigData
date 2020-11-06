@@ -26,6 +26,8 @@
 
 [11 - Spark RDDs basics](labs/11-Spark_RDDs_basics/README.md)
 
+[12 - Spark SQL basics](labs/12-Spark_SQL_basics/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
@@ -41,6 +43,8 @@
 [06 - Counting succeeded SpaceX launches with Spark](assignments/06-Counting_succeeded_SpaceX_launches_with_Spark/README.md)
 
 [07 - Find SpaceX rocket launch cost](assignments/07-Find_SpaceX_rocket_launch_cost/README.md)
+
+[08 - Search in Strava activities](assignments/08-Search_in_Strava_activities/README.md)
 
 ## Appendices
 
