@@ -46,6 +46,8 @@
 
 [08 - Search in Strava activities](assignments/08-Search_in_Strava_activities/README.md)
 
+[09 - Milano open WiFi insight](assignments/09-Milano_open_WiFi_insight/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
