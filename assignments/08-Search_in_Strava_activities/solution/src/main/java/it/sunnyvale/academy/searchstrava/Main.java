@@ -125,7 +125,7 @@ public class Main {
         System.out.println(String.format("\n===   First and last activities (DataFrame API) ==="));
         df
                 .filter(col("Activity Date").isNotNull())
-                .select(min(to_date(col("Activity Date"),"MMM d, yyyy, h:mm:ss a")).as("first"),max(to_date(col("Activity Date"),"MMM d, yyyy, h:mm:ss a")).as("first"))
+                .select(min(to_date(col("Activity Date"),"MMM d, yyyy, h:mm:ss a")).as("first"),max(to_date(col("Activity Date"),"MMM d, yyyy, h:mm:ss a")).as("last"))
                 .show();
 
         //  First and last activities (SQL query)
