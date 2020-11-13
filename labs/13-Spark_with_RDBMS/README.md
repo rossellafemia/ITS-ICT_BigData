@@ -13,7 +13,38 @@ To setup MySQL DB on the and import data into it, run the following command afte
 $ ITS-ICT_BigData/labs/02-Provision_the_environment/Vagrant/scripts/setup_mysql.sh
 ```
 
-To run thid lab locally 
+This will create a table like this:
+
+```
+$ mysql -h 192.168.199.10 -u root -p <<EOF
+desc eployees.eployees;
+EOF
+
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| emp_no     | int(11)       | NO   | PRI | NULL    |       |
+| birth_date | date          | NO   |     | NULL    |       |
+| first_name | varchar(14)   | NO   |     | NULL    |       |
+| last_name  | varchar(16)   | NO   |     | NULL    |       |
+| gender     | enum('M','F') | NO   |     | NULL    |       |
+| hire_date  | date          | NO   |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+```
+
+The database is available at:
+
+<VM_IP>:3306
+user: "root"
+pass: ""
+
+user: eployees
+pass: employeespassword
+
+
+
+
+To run this lab locally 
 
 ```console
 $ mvn exec:exec -Dspark.master=local
