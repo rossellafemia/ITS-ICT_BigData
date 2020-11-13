@@ -28,6 +28,8 @@
 
 [12 - Spark SQL basics](labs/12-Spark_SQL_basics/README.md)
 
+[13 - Spark with RDBMS](labs/13-Spark_with_RDBMS/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
