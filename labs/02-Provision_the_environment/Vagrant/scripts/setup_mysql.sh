@@ -3,7 +3,7 @@ https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 sudo yum install -y mysql-community-server
 sudo systemctl start mysqld.service
 
-
+sudo mysql_upgrade
 
 mysql -u root << EOF
 DROP DATABASE IF EXISTS employees;
