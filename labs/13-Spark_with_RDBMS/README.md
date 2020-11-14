@@ -16,8 +16,8 @@ $ ITS-ICT_BigData/labs/02-Provision_the_environment/Vagrant/scripts/setup_mysql.
 This will create a table like this:
 
 ```
-$ mysql -h 192.168.199.10 -u root -p <<EOF
-desc eployees.eployees;
+$ mysql -h 192.168.199.10 -u root --password="" <<EOF
+desc employees.employees;
 EOF
 
 +------------+---------------+------+-----+---------+-------+
@@ -30,11 +30,12 @@ EOF
 | gender     | enum('M','F') | NO   |     | NULL    |       |
 | hire_date  | date          | NO   |     | NULL    |       |
 +------------+---------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
 ```
 
 The database is available at:
 
-<VM_IP>:3306
+\<VM_IP\>:3306
 user: "root"
 pass: ""
 
