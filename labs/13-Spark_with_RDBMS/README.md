@@ -39,10 +39,10 @@ The database is available at:
 user: "root"
 pass: ""
 
-user: eployees
+user: employees
 pass: employeespassword
 
-
+db name: employeess
 
 
 To run this lab locally 
