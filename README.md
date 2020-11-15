@@ -30,6 +30,8 @@
 
 [13 - Spark with RDBMS](labs/13-Spark_with_RDBMS/README.md)
 
+[14 - Install Kafka](labs/14-Install_Kafka/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
