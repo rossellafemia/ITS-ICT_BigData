@@ -32,7 +32,7 @@
 
 [14 - Install Kafka](labs/14-Install_Kafka/README.md)
 
-[15 - Exchang messages with Kafka](labs/15-Exchang_messages_with_Kafka/README.md)
+[15 - Exchange messages with Kafka](labs/15-Exchange_messages_with_Kafka/README.md)
 
 ## Assignments
 
