@@ -32,6 +32,8 @@
 
 [14 - Install Kafka](labs/14-Install_Kafka/README.md)
 
+[15 - Exchang messages with Kafka](labs/15-Exchang_messages_with_Kafka/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)
