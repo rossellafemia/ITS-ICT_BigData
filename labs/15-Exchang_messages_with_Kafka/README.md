@@ -72,3 +72,12 @@ On node2, messages have been received successfully:
 ciao
 mondo
 ``` 
+
+Delete the topic
+
+```console
+[vagrant@node1 ~]$ /usr/hdp/3.1.0.0-78/kafka/bin/kafka-topics.sh --delete --topic mytopic --zookeeper node1.example.com:2181,node2.example.com:2181,node3.example.com:2181
+Topic mytopic is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+```
+
