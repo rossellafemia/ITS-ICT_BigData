@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Having provisioned the Vagrant 3 nodes cluster [instructions here](../02-Provision_the_environment/Vagrant/README.md) Ambari cluster
+- Having provisioned the Vagrant 3 nodes [Ambari cluster](../02-Provision_the_environment/Vagrant/README.md) Ambari cluster
 - Kafka and Zookeeper processes must be started using Ambari on all hosts
 
 Open two terminals on node1 and node2 VMs. The following commands will report in the shell prompt which VM must be run from.

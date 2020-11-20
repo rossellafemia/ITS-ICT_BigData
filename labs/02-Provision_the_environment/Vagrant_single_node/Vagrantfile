@@ -5,6 +5,7 @@ Vagrant.configure(2) do |config|
     config.hostmanager.manage_host = false
     config.vm.define "node1" do |node1|
       node1.vm.box = "centos/7" 
+      node1.vm.synced_folder ".", "/vagrant"
       node1.vm.synced_folder "../../..", "/usr/src/git_repo"
       node1.vm.network "private_network", ip: "192.168.199.10"
       node1.vm.hostname = "hdp-singlenode.example.com"

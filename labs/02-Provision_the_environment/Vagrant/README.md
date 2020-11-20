@@ -15,7 +15,7 @@ $ vagrant plugin install vagrant-hostmanager
 Install the Vagrant's vbguest plugin 
 
 ```console
-$ vagrant plugin install vagrant-vbguest
+$ vagrant plugin install --plugin-version 0.23.0 vagrant-vbguest
 ```
 
 Before starting the provisioning, go to **scripts** folder and open the file **create_cluster.sh**. Here, decomment the cluster topology you wan to install.
