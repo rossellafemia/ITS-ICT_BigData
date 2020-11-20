@@ -34,6 +34,12 @@
 
 [15 - Exchange messages with Kafka](labs/15-Exchange_messages_with_Kafka/README.md)
 
+[16 - Kafka partition replication](labs/16-Kafka_partition_replication/README.md)
+
+[17 - Kafka consumers](labs/17-Kafka_consumers/README.md)
+
+[18 - Processing Kafka messages with Spark](labs/18-Processing_Kafka_messages_with_Spark/README.md)
+
 ## Assignments
 
 [01 - PV energy production insights with MapReduce](assignments/01-PV_energy_production_insights_with_MapReduce/README.md)

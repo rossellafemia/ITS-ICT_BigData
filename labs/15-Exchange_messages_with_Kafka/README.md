@@ -8,7 +8,7 @@
 Commands in this README are taken from a 3 nodes cluster, if you run the same wizard on a single node cluster the syntax  might change slightly.
 
 
-Open two terminals on node1 and node2 VMs. Each of the following commands will report in the shell prompt which VM must be run from.
+Open two terminals on node1 and node2 VMs. The following commands will report in the shell prompt which VM must be run from.
 
 Alternatively, you can use only one VM (node1 for example), just make sure to modify each command accordingly.
 
