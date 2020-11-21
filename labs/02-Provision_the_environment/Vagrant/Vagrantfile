@@ -16,7 +16,10 @@ Vagrant.configure(2) do |config|
       node1.vm.provision "shell", path: "scripts/install_pig_0.17.sh"
       node1.vm.provision "shell", path: "scripts/install_maven.sh"
       node1.vm.provision "shell", path: "scripts/setup_mysql.sh"
+      node1.vm.provision "shell", path: "scripts/install_nifi.sh"
+      node1.vm.provision "shell", path: "scripts/install_mosquitto.sh"
       node1.vm.network "forwarded_port", guest: 8080, host: 8080
+      node1.vm.network "forwarded_port", guest: 8090, host: 8090
       node1.vm.network "forwarded_port", guest: 3306, host: 3306
       node1.vm.provider "virtualbox" do |v|
         v.memory = 5120
