@@ -1,4 +1,4 @@
-# Apache Nifi MQTT to Kafka
+# Apache Nifi MQTT to Kafka
 
 ## Prerequisites
 
