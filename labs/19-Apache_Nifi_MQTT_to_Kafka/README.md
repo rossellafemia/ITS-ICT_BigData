@@ -12,8 +12,6 @@ $ vagrant ssh node1
 
 ## Kafka preparation
 
-
-
 Create Kafka topic
 
 ```console
