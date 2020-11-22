@@ -55,6 +55,8 @@ Add a **ConsumeMQTT** processor
 
 ![](img/2.png)
 
+Click Add to add it to the flow
+
 ![](img/3.png)
 
 Double click on it and fill the following properties:
@@ -68,6 +70,10 @@ Double click on it and fill the following properties:
 Add a **PublishKafka_2_0** processor
 
 ![](img/2.png)
+
+Click Add to add it to the flow
+
+![](img/4b.png)
 
 Double click on it and fill the following properties:
 
