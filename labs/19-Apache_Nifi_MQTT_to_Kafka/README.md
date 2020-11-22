@@ -20,9 +20,20 @@ Create Kafka topic
 [vagrant@node1 ~]$ /usr/hdp/3.1.0.0-78/kafka/bin/kafka-topics.sh \
     --create \
     --topic nifi \
-    --zookeeper node1.example.com:2181,node2.example.com:2181,node3.example.com:2181 \
+    --zookeeper localhost:2181 \
     --partitions 1 \
     --replication-factor 1
+```
+
+Describe the topic to see if everything is ok
+
+```console
+[vagrant@node1 ~]$ /usr/hdp/3.1.0.0-78/kafka/bin/kafka-topics.sh  \
+    --describe \
+    --topic nifi \
+    --zookeeper localhost:2181
+Topic:nifi      PartitionCount:1        ReplicationFactor:1     Configs:
+        Topic: nifi     Partition: 0    Leader: 1001    Replicas: 1001  Isr: 1001
 ```
 
 ## MQTT preparation
@@ -77,7 +88,7 @@ Click Add to add it to the flow
 
 Double click on it and fill the following properties:
 
-- Kafka Brokers: localhost:6667 (or the list of nodes where Kafka brokers reside)
+- Kafka Brokers: node1.example.com:6667 (or the list of nodes where Kafka brokers reside)
 - Topic Name: nifi
 - Delivery Guarantee: Best Effort
 
@@ -119,7 +130,7 @@ Start consuming Kafka messages
 [vagrant@node1 ~]$ /usr/hdp/3.1.0.0-78/kafka/bin/kafka-console-consumer.sh \
     --topic nifi \
     --from-beginning \
-    --bootstrap-server node1.example.com:6667
+    --bootstrap-server $(hostname):6667
 test 123
 ```
 
