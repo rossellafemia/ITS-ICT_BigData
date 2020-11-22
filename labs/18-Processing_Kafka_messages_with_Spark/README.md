@@ -1,5 +1,12 @@
 ## Processing Kafka messages with Spark
 
+## Prerequisites
+
+- Having provisioned one of the Vagrant 3 nodes cluster or Vagrant single node cluster [instructions here](../02-Provision_the_environment/README.md) 
+- Kafka and Zookeeper processes must be started using Ambari 
+- Kafka Tools installed on the PC (see lab 16 - Kafka partition replication)
+
+
 Create the topic
 
 ```console
