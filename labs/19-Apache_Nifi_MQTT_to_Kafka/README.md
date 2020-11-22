@@ -77,7 +77,7 @@ Click Add to add it to the flow
 
 Double click on it and fill the following properties:
 
-- Kafka Brokers: localhost:6667
+- Kafka Brokers: localhost:6667 (or the list of nodes where Kafka brokers reside)
 - Topic Name: nifi
 - Delivery Guarantee: Best Effort
 
