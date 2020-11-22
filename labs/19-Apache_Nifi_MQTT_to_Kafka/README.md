@@ -4,14 +4,15 @@
 
 - Having provisioned one of the Vagrant 3 nodes cluster or Vagrant single node cluster [instructions here](../02-Provision_the_environment/README.md) 
 - Kafka and Zookeeper processes must be started using Ambari 
-
-## Kafka preparation
-
-Connect to node1 
+- Having connected to node1 
 
 ```
 $ vagrant ssh node1
 ```
+
+## Kafka preparation
+
+
 
 Create Kafka topic
 
@@ -68,15 +69,16 @@ Add a **PublishKafka_2_0** processor
 
 ![](img/2.png)
 
-![](img/5.png)
-
 Double click on it and fill the following properties:
 
 - Kafka Brokers: localhost:6667
 - Topic Name: nifi
 - Delivery Guarantee: Best Effort
 
-Then, wire the two together by tragging the arrow from ConsumerMQTT to PublishKafka_2_0, a new configuration windows opens: just click on Add.
+![](img/5.png)
+
+
+Then, wire the two together by tragging an arrow from ConsumerMQTT to PublishKafka_2_0, a new configuration windows opens: just click on Add.
 
 ![](img/6.png)
 
