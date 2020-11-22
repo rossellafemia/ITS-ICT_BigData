@@ -121,7 +121,6 @@ Publish a MQTT message
 [vagrant@node1 ~]$ mosquitto_pub -h localhost -t test -m "test 123"
 ```
 
-
 ## Consume from Kafka
 
 Start consuming Kafka messages
