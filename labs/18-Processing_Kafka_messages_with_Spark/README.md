@@ -15,7 +15,7 @@ Create the topic
     --topic my-spark-topic \
     --zookeeper node1.example.com:2181,node2.example.com:2181,node3.example.com:2181 \
     --partitions 1 \
-    --replication-factor 1`
+    --replication-factor 1
 ```
 
 Run the application locally
