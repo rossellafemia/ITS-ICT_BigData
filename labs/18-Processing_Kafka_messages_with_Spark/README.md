@@ -21,7 +21,7 @@ Create the topic
 Run the application locally
 
 ```console
-$ mvn exec:exec -Dspark.master=local
+$ mvn package && mvn exec:exec -Dspark.master=local
 -------------------------------------------
 Batch: 0
 -------------------------------------------
