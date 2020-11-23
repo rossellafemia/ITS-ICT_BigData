@@ -73,6 +73,7 @@ Double click on it and fill the following properties:
 - Broker URI: tcp://localhost
 - Topic Filter: test
 - Quality of Service: 0 - At most once
+- Max Queue Size: 20
 
 ![](img/4.png)
 
@@ -84,11 +85,16 @@ Click Add to add it to the flow
 
 ![](img/4b.png)
 
-Double click on it and fill the following properties:
+Double click on it and fill:
+
+in the PROPERTIES sections the following properties
 
 - Kafka Brokers: node1.example.com:6667 (or the list of nodes where Kafka brokers reside)
 - Topic Name: nifi
 - Delivery Guarantee: Best Effort
+- Use Transaction: false
+
+in the SETTINGS screen flag both "success" and "failure" under **Automatically Terminate Relationships**
 
 ![](img/5.png)
 
