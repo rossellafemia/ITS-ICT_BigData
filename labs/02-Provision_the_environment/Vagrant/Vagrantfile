@@ -4,11 +4,13 @@ Vagrant.configure(2) do |config|
     config.hostmanager.manage_guest = true
     config.hostmanager.manage_host = false
     config.vm.define "node1" do |node1|
-      node1.vm.box = "centos/7" 
+      node1.vm.box = "generic/centos7" 
       node1.vm.synced_folder "./", "/vagrant"
       node1.vm.synced_folder "../../..", "/usr/src/git_repo"
       node1.vm.network "private_network", ip: "192.168.199.2"
       node1.vm.hostname = "node1.example.com"
+      node1.vm.provision "shell", inline: "sudo systemctl stop firewalld"
+      node1.vm.provision "shell", inline: "sudo systemctl disable firewalld"
       node1.vm.provision "shell", inline: "sudo yum install -y dos2unix"
       node1.vm.provision "shell", inline: "find /usr/src/git_repo/labs/02-Provision_the_environment/Vagrant/scripts -type f -print0 | xargs -0 dos2unix"
       node1.vm.provision "shell", path: "scripts/install_ambari_server.sh"
@@ -28,12 +30,17 @@ Vagrant.configure(2) do |config|
         v.customize ['modifyvm', :id, '--cableconnected1', 'on']
         v.name = "hdp_node1"
       end
+      node1.vm.provider :libvirt do |libvirt|
+        libvirt.memory = 6144
+      end
     end
     config.vm.define "node2" do |node2|
-      node2.vm.box = "centos/7"
+      node2.vm.box = "generic/centos7"
       node2.vm.synced_folder "./", "/vagrant"
       node2.vm.network "private_network", ip: "192.168.199.3"
       node2.vm.hostname = "node2.example.com"
+      node1.vm.provision "shell", inline: "sudo systemctl stop firewalld"
+      node1.vm.provision "shell", inline: "sudo systemctl disable firewalld"
       node2.vm.provision "shell", inline: "sudo yum install -y dos2unix"
       node2.vm.provision "shell", inline: "find /usr/src/git_repo/labs/02-Provision_the_environment/Vagrant/scripts -type f -print0 | xargs -0 dos2unix"
       node2.vm.provision "shell", path: "scripts/install_ambari_agent.sh"
@@ -44,12 +51,17 @@ Vagrant.configure(2) do |config|
         v.customize ['modifyvm', :id, '--cableconnected1', 'on']
         v.name = "hdp_node2"
       end
+      node2.vm.provider :libvirt do |libvirt|
+        libvirt.memory = 3072
+      end
     end
     config.vm.define "node3" do |node3|
-      node3.vm.box = "centos/7"
+      node3.vm.box = "generic/centos7"
       node3.vm.synced_folder "./", "/vagrant"
       node3.vm.network "private_network", ip: "192.168.199.4"
       node3.vm.hostname = "node3.example.com"
+      node1.vm.provision "shell", inline: "sudo systemctl stop firewalld"
+      node1.vm.provision "shell", inline: "sudo systemctl disable firewalld"
       node3.vm.provision "shell", inline: "sudo yum install -y dos2unix"
       node3.vm.provision "shell", inline: "find /usr/src/git_repo/labs/02-Provision_the_environment/Vagrant/scripts -type f -print0 | xargs -0 dos2unix"
       node3.vm.provision "shell", path: "scripts/install_ambari_agent.sh"
@@ -62,6 +74,9 @@ Vagrant.configure(2) do |config|
         v.cpus = 2
         v.customize ['modifyvm', :id, '--cableconnected1', 'on']
         v.name = "hdp_node3"
+      end
+      node3.vm.provider :libvirt do |libvirt|
+        libvirt.memory = 3072
       end
     end
   end
