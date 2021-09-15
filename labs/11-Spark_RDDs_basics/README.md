@@ -130,7 +130,7 @@ $ aws s3api put-object --bucket its-ict-emr-bucket --key lab11_input/constitutio
 }
 ```
 
-Submit the job (change the `--cluster-id` value with the one representing your cluster)
+Submit the job (change the `--cluster-id` value with the one representing your cluster and **its-ict-emr-bucket** with your bucket name)
 
 ```console
 $ aws emr add-steps \
@@ -142,4 +142,6 @@ $ aws emr add-steps \
     ]
 }
 ```
+
+Open the AWS console (https://s3.console.aws.amazon.com) and inspect the bucket to see if the output folder has been created and contains the result file.
 
