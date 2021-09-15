@@ -130,6 +130,15 @@ $ aws s3api put-object --bucket its-ict-emr-bucket --key lab11_input/constitutio
 }
 ```
 
+Delete the output folder in the case you already run this lab (change **its-ict-emr-bucket** with your bucket name)
+
+```console
+$ aws s3 rm --recursive s3://its-ict-emr-bucket/lab11_output/
+delete: s3://its-ict-emr-bucket/lab11_output/part-00000
+delete: s3://its-ict-emr-bucket/lab11_output/part-00001
+delete: s3://its-ict-emr-bucket/lab11_output/_SUCCESS
+```
+
 Submit the job (change the `--cluster-id` value with the one representing your cluster and **its-ict-emr-bucket** with your bucket name)
 
 ```console
